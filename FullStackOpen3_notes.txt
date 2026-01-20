@@ -1,17 +1,23 @@
 Part 1 Introduction to React____________________________________________________________________________________________________________________________
 
-npm create vite@latest // to create a new React frontend project
-
-
-
-
-
+npm create vite@latest 
+	// to create a new React frontend project
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 2 Communicating with server________________________________________________________________________________________________________________________
 
+npx json-server --port 3001 db.json 
+	//runs a local fake REST API on port 3001 using data from db.json, need to have db.json implemented
+npm install json-server --save-dev
+	// to start the json server, add this script to package.json
+		- "server": "json-server -p 3001 db.json"
+	// then you run the server with the command:
+		- npm run server
+
+npm install axios 
+	//Axios is a library that simplifies making HTTP requests and handling responses in JavaScript applications. Used mostly in frontend
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
