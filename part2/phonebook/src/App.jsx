@@ -39,8 +39,8 @@ const Persons = ({filter, persons, filteredPersons, setPersons}) => {
     <>
       {filter === '' ? persons.map(person => {
         return <div key={person.id}>
-          {person.name} 
-          {person.number} 
+          {person.name} {' '}
+          {person.number} {' '}
           <DeleteButton handleDelete={() => handleDelete(person)}
           /><br />
         </div>
@@ -82,8 +82,25 @@ const App = () => {
   const onSubmit = (event) => {
     event.preventDefault()
 
-    if (persons.some(person => person.name === newName)) {
+    if (persons.some(person => person.name === newName && person.number === newNumber)) {
       alert(`${newName} is already added to phonebook`)
+    } else if (persons.some(person => person.name === newName && person.number !== newNumber)) {
+      if (window.confirm(`${newName} is already added to phonebook, replace the old number with a new one?`)) {
+        const oldObject = persons.find(person => person.name === newName)
+        const updatedObject = {...oldObject, number: newNumber}
+
+        personService.update(updatedObject.id, updatedObject)
+        .then(() => {
+            //console.log(response)
+            setPersons(persons.map(p => p.id === updatedObject.id ? updatedObject : p))
+            setNewName('')
+            setNewNumber('')
+          })
+          .catch(error => {
+            alert('updating person phone number failed')
+            console.log('updating person phone number failed: ', error)
+          })
+      }
     } else {
       // const newObject = {
       //   name: newName,
