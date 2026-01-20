@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+import personService from './services/persons'
 
 const Filter = ({filter, handleFilterChange}) => {
   return (
@@ -21,13 +21,33 @@ const PersonForm = ({onSubmit, newName, handleNewNameChange, newNumber, handleNe
   )
 }
 
-const Persons = ({filter, persons, filteredPersons}) => {
+const DeleteButton = ({ handleDelete }) => {
+  return (
+    <button onClick={handleDelete}>delete</button>
+  )
+}
+
+const Persons = ({filter, persons, filteredPersons, setPersons}) => {
+  const handleDelete = (person) => {
+    if (window.confirm(`Delete ${person.name}?`)) {
+      personService.remove(person.id).catch(error => alert('unable to delete person:', error))
+      setPersons(persons.filter(a => a.id !== person.id))
+    }
+  }
+  
   return (
     <>
       {filter === '' ? persons.map(person => {
-        return <div key={person.id}>{person.name} {person.number}<br /></div>
+        return <div key={person.id}>
+          {person.name} 
+          {person.number} 
+          <DeleteButton handleDelete={() => handleDelete(person)}
+          /><br />
+        </div>
       }) : filteredPersons.map(person => {
-        return <div key={person.id}>{person.name} {person.number}<br /></div>
+        return <div key={person.id}>
+          {person.name} {person.number}<br />
+        </div>
       })}
     </>
   )
@@ -41,14 +61,22 @@ const App = () => {
   const [filter, setFilter] = useState('')
 
   useEffect(() => {
-    console.log('useEffect initializing...');
-    axios.get('http://localhost:3001/persons')
+    // console.log('useEffect initializing...');
+    // axios.get('http://localhost:3001/persons')
+    //   .then(response => {
+    //     console.log('promise fulfilled');
+    //     setPersons(response.data)
+    //   })
+    personService.getAll()
       .then(response => {
-        console.log('promise fulfilled');
-        setPersons(response.data)
+        setPersons(response)
+      })
+      .catch(error => {
+        console.log('getting all persons failed: ', error)
+        alert('getting all persons failed')
       })
   }, [])
-  console.log('render', persons.length, 'persons');
+  console.log('rendered', persons.length, 'persons');
   
 
   const onSubmit = (event) => {
@@ -57,15 +85,34 @@ const App = () => {
     if (persons.some(person => person.name === newName)) {
       alert(`${newName} is already added to phonebook`)
     } else {
+      // const newObject = {
+      //   name: newName,
+      //   number: newNumber//,
+      //   //id: persons.length + 1 // LET THE JSON SERVER AUTO GENERATE THE ID
+      // }
       const newObject = {
         name: newName,
-        number: newNumber,
-        id: persons.length + 1
+        number: newNumber
       }
 
-      setPersons(persons.concat(newObject))
-      setNewName('')
-      setNewNumber('')
+      // axios.post('http://localhost:3001/persons', newObject)
+        // .then(response => {
+        //   console.log(response)
+        //   setPersons(persons.concat(response.data))
+        // setNewName('')
+        // setNewNumber('')
+        // })
+      personService.create(newObject)
+       .then(response => {
+          console.log(response)
+          setPersons(persons.concat(response))
+          setNewName('')
+          setNewNumber('')
+        })
+        .catch(error => {
+          alert('creating new person failed')
+          console.log('creating new person failed: ', error)
+        })
     }
   }
 
@@ -100,7 +147,7 @@ const App = () => {
 
       <h2>Numbers</h2>
 
-      <Persons filter={filter} persons={persons} filteredPersons={filteredPersons} />
+      <Persons filter={filter} persons={persons} filteredPersons={filteredPersons} setPersons={setPersons}/>
     </div>
   )
 }
