@@ -106,6 +106,7 @@ const App = () => {
           .catch(error => {
             //alert('updating person phone number failed')
             console.log('updating person phone number failed: ', error)
+            setPersons(persons.filter(p => p.name !== newName))
             setErrorMessage('updating person phone number failed')
             setTimeout(() => setErrorMessage(null), 5000)
           })
