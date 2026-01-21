@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import personService from './services/persons'
+import Notification from './components/Notification'
+import Footer from './components/Footer'
 
 const Filter = ({filter, handleFilterChange}) => {
   return (
@@ -11,7 +13,7 @@ const Filter = ({filter, handleFilterChange}) => {
 
 const PersonForm = ({onSubmit, newName, handleNewNameChange, newNumber, handleNewNumberChange}) => {
   return (
-    <form onSubmit={onSubmit}>
+    <form className='personForm' onSubmit={onSubmit}>
       <div>name: <input value={newName} onChange={handleNewNameChange}/></div>
       <div>number: <input value={newNumber} onChange={handleNewNumberChange}/></div>
       <div>
@@ -59,6 +61,7 @@ const App = () => {
   const [newNumber, setNewNumber] = useState('')
   const [filteredPersons, setFilteredPersons] = useState(persons)
   const [filter, setFilter] = useState('')
+  const [errorMessage, setErrorMessage] = useState(null)
 
   useEffect(() => {
     // console.log('useEffect initializing...');
@@ -73,7 +76,9 @@ const App = () => {
       })
       .catch(error => {
         console.log('getting all persons failed: ', error)
-        alert('getting all persons failed')
+        // alert('getting all persons failed')
+        setErrorMessage('getting all persons failed')
+        setTimeout(() => setErrorMessage(null), 5000)
       })
   }, [])
   console.log('rendered', persons.length, 'persons');
@@ -83,7 +88,9 @@ const App = () => {
     event.preventDefault()
 
     if (persons.some(person => person.name === newName && person.number === newNumber)) {
-      alert(`${newName} is already added to phonebook`)
+      //alert(`${newName} is already added to phonebook`)
+      setErrorMessage(`${newName} is already added to phonebook`)
+      setTimeout(() => setErrorMessage(null), 5000)
     } else if (persons.some(person => person.name === newName && person.number !== newNumber)) {
       if (window.confirm(`${newName} is already added to phonebook, replace the old number with a new one?`)) {
         const oldObject = persons.find(person => person.name === newName)
@@ -97,8 +104,10 @@ const App = () => {
             setNewNumber('')
           })
           .catch(error => {
-            alert('updating person phone number failed')
+            //alert('updating person phone number failed')
             console.log('updating person phone number failed: ', error)
+            setErrorMessage('updating person phone number failed')
+            setTimeout(() => setErrorMessage(null), 5000)
           })
       }
     } else {
@@ -125,9 +134,13 @@ const App = () => {
           setPersons(persons.concat(response))
           setNewName('')
           setNewNumber('')
+          setErrorMessage(`Added ${response.name}`)
+          setTimeout(() => setErrorMessage(null), 5000)
         })
         .catch(error => {
-          alert('creating new person failed')
+          //alert('creating new person failed')
+          setErrorMessage('creating new person failed')
+          setTimeout(() => setErrorMessage(null), 5000)
           console.log('creating new person failed: ', error)
         })
     }
@@ -155,6 +168,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message={errorMessage} />
 
       <Filter filter={filter} handleFilterChange={handleFilterChange} />
 
@@ -165,6 +179,8 @@ const App = () => {
       <h2>Numbers</h2>
 
       <Persons filter={filter} persons={persons} filteredPersons={filteredPersons} setPersons={setPersons}/>
+
+      <Footer />
     </div>
   )
 }
