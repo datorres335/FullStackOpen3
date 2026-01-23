@@ -24,7 +24,28 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 3 Programming a server with NodeJS and Express ____________________________________________________________________________________________________
 
+npm init
+	// creates a package.json file, which defines your project and enables npm to manage dependencies and scripts.
 
+npm install express 
+	// for backend server
+
+npm update
+	// updates the dependencies of a project
+
+npm install
+	// Likewise, if we start working on the project on another computer, we can install all up-to-date dependencies of the project defined in 	package.json by running this command in the project's root directory
+
+node --watch index.js
+	// runs your Express server and automatically restarts it whenever your code changes
+	// typically found as a script -> "dev": "node --watch index.js"
+	// Does not: Hot-reload without restart, preserve server state, replace frontend hot module reload
+	// although the server restarts automatically, you still need to refresh the browser
+
+*.rest
+	// once you have the plugin "REST client" installed, you can create .rest files to test out HTTP requests in the backend
+		// ex: GET http://localhost:3001/api/notes
+	// .rest files are typically placed in a "requsts" directory in the root folder
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
@@ -61,6 +82,8 @@ ________________________________________________________________________________
 Part 9 TypeScript_______________________________________________________________________________________________________________________________________
 
 
+** WATCH THIS VIDEO AFTER YOU FINISH PART 9 TypeScript: Next js Tutorial for Beginners | Nextjs 13 (App Router) with TypeScript - left off at:
+https://www.youtube.com/watch?v=ZVnjOPwW4ZA
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
