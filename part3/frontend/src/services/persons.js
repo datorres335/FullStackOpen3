@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const baseUrl = '/api/persons'
+//const baseUrl = 'http://localhost:3001/api/persons'
+const baseUrl = '/api/persons' //need to use relative URL when you copy 'dist' (aka frontend production build, aka 'npm run build') into backend dir
 
 const getAll = () => {
   const request = axios.get(baseUrl)

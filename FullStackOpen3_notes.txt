@@ -46,6 +46,11 @@ node --watch index.js
 	// once you have the plugin "REST client" installed, you can create .rest files to test out HTTP requests in the backend
 		// ex: GET http://localhost:3001/api/notes
 	// .rest files are typically placed in a "requsts" directory in the root folder
+
+npm install cors
+	// We can allow requests from other origins by using Node's cors middleware in the backend
+
+npm run build // to create a production build of your application (used in the frontend with vite)
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
