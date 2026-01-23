@@ -49,6 +49,8 @@ node --watch index.js
 
 npm install cors
 	// We can allow requests from other origins by using Node's cors middleware in the backend
+	// can remove cors middleware after you create a frontend production build (aka dist folder created with 'npm run build') and copy it into the 	frontend
+	// remove with: npm remove cors 
 
 npm run build // to create a production build of your application (used in the frontend with vite)
 ________________________________________________________________________________________________________________________________________________________
