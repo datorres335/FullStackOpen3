@@ -28,7 +28,7 @@ if (process.argv.length === 5) {
   })
 
   person.save().then(result => {
-    console.log('new person added!');
+    console.log(result.name, 'was added! ');
     mongoose.connection.close()
   })
 }
@@ -36,7 +36,7 @@ if (process.argv.length === 5) {
 if (process.argv.length === 3) {
   Person.find({}).then(result => {
     result.forEach(person => {
-      console.log(person);
+      console.log(person.name, person.number);
     })
     mongoose.connection.close()
   })

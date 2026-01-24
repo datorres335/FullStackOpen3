@@ -1,44 +1,65 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
-const cors = require('cors')
+//const cors = require('cors')
+const Person = require('./models/person')
 
 app.use(express.json())
-app.use(cors())
+//app.use(cors())
 app.use(express.static('dist'))
 
 morgan.token('body', req => JSON.stringify(req.body))
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'))
 
-let persons = [
-    { 
-      "id": "1",
-      "name": "Arto Hellas", 
-      "number": "040-123456"
-    },
-    { 
-      "id": "2",
-      "name": "Ada Lovelace", 
-      "number": "39-44-5323523"
-    },
-    { 
-      "id": "3",
-      "name": "Dan Abramov", 
-      "number": "12-43-234345"
-    },
-    { 
-      "id": "4",
-      "name": "Mary Poppendieck", 
-      "number": "39-23-6423122"
-    }
-]
+// let persons = [
+//     { 
+//       "id": "1",
+//       "name": "Arto Hellas", 
+//       "number": "040-123456"
+//     },
+//     { 
+//       "id": "2",
+//       "name": "Ada Lovelace", 
+//       "number": "39-44-5323523"
+//     },
+//     { 
+//       "id": "3",
+//       "name": "Dan Abramov", 
+//       "number": "12-43-234345"
+//     },
+//     { 
+//       "id": "4",
+//       "name": "Mary Poppendieck", 
+//       "number": "39-23-6423122"
+//     }
+// ]
+
+//mongoose.set('strictQuery', false)
+// mongoose.connect(process.env.MONGODB_URI, { family: 4 })
+
+// const personSchema = new mongoose.Schema({
+//   name: String,
+//   number: String
+// })
+// personSchema.set('toJSON', {
+//   transform: (document, returnedObject) => {
+//     returnedObject.id = returnedObject._id.toString()
+//     delete returnedObject._id
+//     delete returnedObject.__v
+//   }
+// })
+//const Person = mongoose.model('Person', personSchema)
 
 app.get('/', (request, response) => {
   response.send('<h1>Hello World!</h1>')
 })
 
 app.get('/api/persons', (request, response) => {
-  response.json(persons)
+  // response.json(persons)
+  Person.find({}).then(persons => {
+    response.json(persons)
+  })
 })
 
 app.get('/api/persons/:id', (request, response) => {
@@ -105,7 +126,7 @@ const unknownEndpoint = (request, response) => {
 
 app.use(unknownEndpoint)
 
-const PORT = process.env.PORT || 3001 // process.env.PORT is necessary to deploy app on Render.com
+const PORT = process.env.PORT // process.env.PORT is necessary to deploy app on Render.com
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
