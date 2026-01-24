@@ -84,7 +84,7 @@ app.get('/api/persons/:id', (request, response, next) => {
     })
 })
 
-app.delete('/api/persons/:id', (request, response) => {
+app.delete('/api/persons/:id', (request, response, next) => {
   // const id = request.params.id
   // persons = persons.filter(person => person.id !== id)
 
@@ -129,10 +129,13 @@ app.put('/api/persons/:id', (request, response, next) => {
 })
 
 app.get('/info', (request, response) => {
-  const numOfPeople = persons.length
-  const now = new Date().toString()
-
-  response.send(`<p>Phonebook has info for ${numOfPeople} people</p> <p>${now}</p>`)
+  // const numOfPeople = persons.length
+  // const now = new Date().toString()
+  // response.send(`<p>Phonebook has info for ${numOfPeople} people</p> <p>${now}</p>`)
+  Person.countDocuments({}).then(count => {
+    const now = new Date().toString()
+    response.send(`<p>Phonebook has info for ${count} people</p> <p>${now}</p>`)
+  })
 })
 
 const unknownEndpoint = (request, response) => {

@@ -52,7 +52,22 @@ npm install cors
 	// can remove cors middleware after you create a frontend production build (aka dist folder created with 'npm run build') and copy it into the 	frontend
 	// remove with: npm remove cors 
 
-npm run build // to create a production build of your application (used in the frontend with vite)
+npm run build 
+	// to create a production build of your application (used in the frontend with vite)
+
+npm install mongoose 
+	// install in the backend
+
+npm install eslint @eslint/js --save-dev
+	// analyzes your JavaScript for bugs and bad patterns, and @eslint/js provides a set of recommended rules, both used only during development.
+npx eslint --init
+	// to initialize a default ESlint configuration
+npm install --save-dev @stylistic/eslint-plugin
+	// to create formatting rules so you can enforce consistent code style without affecting program behavior (did not implement in project)
+npx eslint index.js (CREATE CUSTOM SCRIPT TO USE)
+	// to inspect and validate a file
+	// recommended to create a custom script for it:
+		// "lint": "eslint ."
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________

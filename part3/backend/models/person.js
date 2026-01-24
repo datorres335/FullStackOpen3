@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 mongoose.set('strictQuery', false)
 mongoose.connect(process.env.MONGODB_URI, { family: 4 })
-  .then(result => console.log('connected to MongoDB'))
+  .then(() => console.log('connected to MongoDB'))
   .catch(error => console.log('error connecting to MongoDB: ', error.message))
 
 const personSchema = new mongoose.Schema({
