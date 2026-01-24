@@ -2,11 +2,9 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
-//const cors = require('cors')
 const Person = require('./models/person')
 
 app.use(express.json())
-//app.use(cors())
 app.use(express.static('dist'))
 
 morgan.token('body', req => JSON.stringify(req.body))
@@ -56,21 +54,26 @@ app.get('/', (request, response) => {
 })
 
 app.get('/api/persons', (request, response) => {
-  // response.json(persons)
   Person.find({}).then(persons => {
     response.json(persons)
   })
 })
 
 app.get('/api/persons/:id', (request, response) => {
-  const id = request.params.id
-  const person = persons.find(person => person.id === id)
+  // const id = request.params.id
+  // const person = persons.find(person => person.id === id)
 
-  if (person) {
-    response.json(person)
-  } else {
-    response.status(404).end()
-  }
+  // if (person) {
+  //   response.json(person)
+  // } else {
+  //   response.status(404).end()
+  // }
+
+  Person.findById(request.params.id)
+    .then(person => {
+      response.json(person)
+    })
+    .catch(error => response.status(404).end())
 })
 
 app.delete('/api/persons/:id', (request, response) => {
@@ -80,14 +83,7 @@ app.delete('/api/persons/:id', (request, response) => {
   response.status(204).end()
 })
 
-const generateId = () => {
-  const maxId = persons.length > 0
-    ? Math.max(...persons.map(n => Number(n.id)))
-    : 0
-  return String(maxId + 1)
-}
-
-app.post('/api/persons', (request, response) => {
+app.post('/api/persons', async (request, response) => {
   const body = request.body
 
   if (!body.name || !body.number) {
@@ -96,21 +92,31 @@ app.post('/api/persons', (request, response) => {
     })
   }
 
-  if (persons.find(person => person.name === body.name)) {
-    return response.status(400).json({
-      error: 'name already exists in the phonebook'
-    })
+  const personExists = await Person.findOne({ name: body.name })
+
+  if (personExists) {
+    if (personExists.number === body.number) {
+      return response.status(400).json({
+        error: 'name already exists in the phonebook'
+      })
+    } else {
+      const updatedPerson = await Person.findByIdAndUpdate(
+        personExists._id,
+        { number: body.number },
+        { new: true }
+      )
+      return response.json(updatedPerson)
+    }
   }
 
-  const person = {
-    id: generateId(),
+  const person = new Person({
     name: body.name,
     number: body.number
-  }
+  })
 
-  persons = persons.concat(person)
-
-  response.json(person)
+  person.save().then(savedPerson => {
+    response.json(savedPerson)
+  })
 })
 
 app.get('/info', (request, response) => {
