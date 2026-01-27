@@ -73,7 +73,19 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 4 Testing Express servers, user administration_____________________________________________________________________________________________________
 
+npm install cross-env
+	// lets you define environment variables in npm scripts in a way that works on all operating systems.
+	// This is so that we can set "NODE_ENV" to different modes in the scripts
+	// Example:
+		"scripts": {
+			"test": "cross-env NODE_ENV=test node --test",
+			"start": "cross-env NODE_ENV=production node index.js",
+			"dev": "cross-env NODE_ENV=development node --watch index.js" }
+	// NODE_ENV lets your app and tools know whether they’re running in development, testing, or production so they can change behavior safely and 	efficiently.
 
+npm install --save-dev supertest
+	// a library for testing HTTP APIs (especially Express apps) without starting a real server.
+	// Think of Supertest as Postman, but inside your test file and fully automated.
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
