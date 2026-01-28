@@ -113,6 +113,9 @@ npm test -- --test-name-pattern="a specific note is within the returned notes" /
 	// THEN RUN: 
 		npm run test:pattern "a specific blog can be viewed"
 
+npm install bcrypt
+	// a library used to securely hash passwords before storing them in a database
+	// Never use bcrypt in the frontend
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
