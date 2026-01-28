@@ -7,35 +7,9 @@ const api = supertest(app)
 const Blog = require('../models/blog')
 const helper = require('./test_helper')
 
-// const initialBlogs = [
-//   {
-//     title: "No Title Test 1",
-//     author: "No Author Test 1",
-//     url: "No URL",
-//     likes: 0
-//   },
-//   {
-//     title: "No Title Test 2",
-//     author: "No Author Test 2",
-//     url: "No URL",
-//     likes: 1
-//   },
-//   {
-//     title: "No Title Test 3",
-//     author: "No Author Test 3",
-//     url: "No URL",
-//     likes: 2
-//   },
-// ]
-
 beforeEach(async () => {
   await Blog.deleteMany({})
-  let blogObject = new Blog(helper.initialBlogs[0])
-  await blogObject.save()
-  blogObject = new Blog(helper.initialBlogs[1])
-  await blogObject.save()
-  blogObject = new Blog(helper.initialBlogs[2])
-  await blogObject.save()
+  await Blog.insertMany(helper.initialBlogs)
 })
 
 test('blogs are returned as json', async () => {
@@ -104,6 +78,21 @@ test('a specific blog can be viewed', async () => {
     .expect('Content-Type', /application\/json/)
 
   assert.deepStrictEqual(resultBlog.body, blogToView)
+})
+
+test.only('a blog can be deleted', async () => {
+  const blogsAtStart = await helper.blogsInDb()
+  const blogToDelete = blogsAtStart[0]
+
+  await api
+    .delete(`/api/blogs/${blogToDelete.id}`)
+    .expect(204)
+
+  const blogsAtEnd = await helper.blogsInDb()
+  const ids = blogsAtEnd.map(n => n.id)
+
+  assert(!ids.includes(blogToDelete.id))
+  assert.strictEqual(blogsAtEnd.length, helper.initialBlogs.length - 1)
 })
 
 after(async () => {
