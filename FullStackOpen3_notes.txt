@@ -86,6 +86,18 @@ npm install cross-env
 npm install --save-dev supertest
 	// a library for testing HTTP APIs (especially Express apps) without starting a real server.
 	// Think of Supertest as Postman, but inside your test file and fully automated.
+
+npm test -- tests/blog_api.test.js
+	// executes tests specified by route argument
+
+npm test -- --test-name-pattern="a specific note is within the returned notes" // COMMAND DOES NOT WORK AS INTENDED!!!!!
+	// COMMAND DOES NOT WORK AS INTENDED!!!!!
+	// run tests with a specific name
+	// The provided argument can refer to the name of the test or the describe block
+	//It can also contain just a part of the name. The following command will run all of the tests that contain notes in their name:
+		npm run test -- --test-name-pattern="notes"
+	// COMMAND DOES NOT WORK AS INTENDED!!!!!
+
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
