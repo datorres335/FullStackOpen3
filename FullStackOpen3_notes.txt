@@ -120,6 +120,7 @@ npm install bcrypt
 npm install jsonwebtoken
 	//(often called JWT) lets your backend server issue & verify signed tokens so users stay authenticated without sending passwords on every request
 	// Important: JWT payload is readable, so never store passwords or secrets in it.
+
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
