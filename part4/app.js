@@ -23,9 +23,9 @@ mongoose
 app.use(express.static('dist'))
 app.use(express.json())
 app.use(middleware.requestLogger)
-//app.use(middleware.tokenExtractor) // TOKEN EXTRACTOR MIDDLEWARE DOES NOT WORK AS INTENDED FOR SOME REASON
+app.use(middleware.tokenExtractor)
 
-app.use('/api/blogs', blogsRouter)
+app.use('/api/blogs', middleware.userExtractor, blogsRouter) // use this middleware function only in /api/blogs routes
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
 
