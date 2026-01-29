@@ -1,10 +1,10 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRhdmlkIiwiaWQiOiI2OTdhOWExM2JkMDRkNzJjYTdiZTgyZDgiLCJpYXQiOjE3Njk2NDQwMjl9.qjznFrifw8A8yQ1RfNvLkh9fz7VoxkKRyakOTwSBqzM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRhdmlkIiwiaWQiOiI2OTdhOWExM2JkMDRkNzJjYTdiZTgyZDgiLCJpYXQiOjE3Njk2NDU2MTl9.bQgqg2P4eKZkvHk-26xOH3lzm-gZ12YaULPJ1EipchI
 
 {
-  "title": "Clean Code: The Good, the Bad and the Ugly",
-  "author": "Daniel Gerlach",
-  "url": "https://gerlacdt.github.io/blog/posts/clean_code/",
+  "title": "Another blog test",
+  "author": "David Torres",
+  "url": "https://url/",
   "likes": 0
 }

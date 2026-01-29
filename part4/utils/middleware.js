@@ -28,6 +28,18 @@ const errorHandler = (error, request, response, next) => {
   next(error)
 }
 
+// TOKEN EXTRACTOR MIDDLEWARE DOES NOT WORK AS INTENDED FOR SOME REASON
+// const tokenExtractor = (request, response, next) => {
+//   request.token = null
+//   const authorization = request.get('authorization')
+
+//   if (authorization && authorization.startsWith('Bearer ')) {
+//     return authorization.replace('Bearer ', '')
+//   }
+
+//   next()
+// }
+
 module.exports = {
   requestLogger,
   unknownEndpoint,
