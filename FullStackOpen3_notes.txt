@@ -3,6 +3,13 @@ Part 1 Introduction to React____________________________________________________
 npm create vite@latest 
 	// to create a new React frontend project
 
+//IMPORTANT!! When cloning an external project inside of an existing project, make sure to go inside of the newly cloned repo and delete the 	existing .git file with the commands:
+		git clone <new project>
+		cd <new project>
+		rm -rf .git // MUST REMOVE .git FILE WHEN CLONING INTO EXISITNG PROJECT!!! 
+		npm install
+		"npm start" or "npm run dev"
+
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
@@ -54,6 +61,10 @@ npm install cors
 
 npm run build 
 	// to create a production build of your application (used in the frontend with vite)
+
+// usefull custom scripts:
+    "build:ui": "rm -rf dist && cd ../frontend && npm run build && cp -r dist ../backend",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
 
 npm install mongoose 
 	// install in the backend
