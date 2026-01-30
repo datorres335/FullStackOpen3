@@ -52,6 +52,24 @@ const App = () => {
     blogFormRef.current.toggleVisibility()
   }
 
+  const handleVote = async (blog) => {
+    const updatedBlog = await blogService.update(blog.id, {
+      ...blog,
+      likes: blog.likes + 1
+    })
+
+    notify(`You  liked ${updatedBlog.title} by ${updatedBlog.author}`)
+    setBlogs(blogs.map(b => b.id === blog.id ? updatedBlog : b))
+  }
+
+  const handleDelete = async (blog) => {
+    if (window.confirm(`Remove blog ${blog.title} by ${blog.author}`)) {
+      await blogService.remove(blog.id)
+      setBlogs(blogs.filter(b => b.id !== blog.id))
+      notify(`Blog ${blog.title}, by ${blog.author} removed`)
+    }
+  }
+
   if (!user) {
     return (
       <div>
@@ -72,7 +90,7 @@ const App = () => {
       </Togglable>
 
       {blogs.map(blog =>
-        <Blog key={blog.id} blog={blog} />
+        <Blog key={blog.id} blog={blog} handleVote={handleVote} handleDelete={handleDelete}/>
       )}
     </div>
   )
