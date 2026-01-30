@@ -3,6 +3,7 @@ import Blog from './components/Blog'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import NewBlog from './components/NewBlog'
+import Notification from './components/Notification'
 import blogService from './services/blogs'
 import loginService from './services/login'
 import storage from './services/storage'
@@ -52,6 +53,7 @@ const App = () => {
     return (
       <div>
         <h2>Blogs</h2>
+        <Notification notification={notification} />
         <Login doLogin={handleLogin} />
       </div>
     )
@@ -60,6 +62,7 @@ const App = () => {
   return (
     <div>
       <h2>blogs</h2>
+      <Notification notification={notification} />
       <Logout name={user.name} setUser={setUser} storage={storage} notify={notify} />
       <NewBlog doCreate={handleCreate} />
       {blogs.map(blog =>
