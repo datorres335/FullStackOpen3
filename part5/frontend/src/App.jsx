@@ -80,6 +80,8 @@ const App = () => {
     )
   }
 
+  const byLikes = (a, b) => b.likes - a.likes
+
   return (
     <div>
       <h2>blogs</h2>
@@ -89,8 +91,13 @@ const App = () => {
         <NewBlog doCreate={handleCreate} />
       </Togglable>
 
-      {blogs.map(blog =>
-        <Blog key={blog.id} blog={blog} handleVote={handleVote} handleDelete={handleDelete}/>
+      {blogs.sort(byLikes).map(blog =>
+        <Blog 
+          key={blog.id} 
+          blog={blog} 
+          handleVote={handleVote} 
+          handleDelete={handleDelete}
+        />
       )}
     </div>
   )
