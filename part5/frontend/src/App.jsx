@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Blog from './components/Blog'
 import Login from './components/Login'
 import Logout from './components/Logout'
+import NewBlog from './components/NewBlog'
 import blogService from './services/blogs'
 import loginService from './services/login'
 import storage from './services/storage'
@@ -40,6 +41,13 @@ const App = () => {
     }
   }
 
+  const handleCreate = async (blog) => {
+    const newBlog = await blogService.create(blog)
+    setBlogs(blogs.concat(newBlog))
+    notify(`Blog created!: ${newBlog.title}, ${newBlog.author}`)
+    //blogFormRef.current.toggleVisibility()
+  }
+
   if (!user) {
     return (
       <div>
@@ -53,6 +61,7 @@ const App = () => {
     <div>
       <h2>blogs</h2>
       <Logout name={user.name} setUser={setUser} storage={storage} notify={notify} />
+      <NewBlog doCreate={handleCreate} />
       {blogs.map(blog =>
         <Blog key={blog.id} blog={blog} />
       )}
