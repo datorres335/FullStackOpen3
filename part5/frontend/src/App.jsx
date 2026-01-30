@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, createRef } from 'react'
 import Blog from './components/Blog'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import NewBlog from './components/NewBlog'
 import Notification from './components/Notification'
+import Togglable from './components/Togglable'
 import blogService from './services/blogs'
 import loginService from './services/login'
 import storage from './services/storage'
@@ -26,6 +27,8 @@ const App = () => {
     }
   }, [])
 
+  const blogFormRef = createRef()
+
   const notify = (message, type = 'success') => {
     setNotification({ message, type })
     setTimeout(() => setNotification(null), 5000)
@@ -46,7 +49,7 @@ const App = () => {
     const newBlog = await blogService.create(blog)
     setBlogs(blogs.concat(newBlog))
     notify(`Blog created!: ${newBlog.title}, ${newBlog.author}`)
-    //blogFormRef.current.toggleVisibility()
+    blogFormRef.current.toggleVisibility()
   }
 
   if (!user) {
@@ -64,7 +67,10 @@ const App = () => {
       <h2>blogs</h2>
       <Notification notification={notification} />
       <Logout name={user.name} setUser={setUser} storage={storage} notify={notify} />
-      <NewBlog doCreate={handleCreate} />
+      <Togglable buttonLabel="Create New Blog" ref={blogFormRef}>
+        <NewBlog doCreate={handleCreate} />
+      </Togglable>
+
       {blogs.map(blog =>
         <Blog key={blog.id} blog={blog} />
       )}
