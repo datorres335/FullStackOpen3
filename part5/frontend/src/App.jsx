@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Blog from './components/Blog'
 import Login from './components/Login'
+import Logout from './components/Logout'
 import blogService from './services/blogs'
 import loginService from './services/login'
 import storage from './services/storage'
@@ -51,6 +52,7 @@ const App = () => {
   return (
     <div>
       <h2>blogs</h2>
+      <Logout name={user.name} setUser={setUser} storage={storage} notify={notify} />
       {blogs.map(blog =>
         <Blog key={blog.id} blog={blog} />
       )}
