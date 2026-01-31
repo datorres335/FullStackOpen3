@@ -187,7 +187,44 @@ npx vitest run --coverage
 	// optional custom script to add: 
 		"test:coverage": "vitest run --coverage"
 	// add "coverage/" to the .gitignore file
-	
+
+npm init playwright@latest
+	// a project scaffolding command
+	// Playwright is an end-to-end (E2E) testing framework.
+	// Tests run in real browsers; Verifies frontend + backend together; Complements (does not replace) unit tests
+	// Playwright verifies: Frontend UI, Backend API, Database, Cookies / localStorage, CORS, Authentication, Routing
+	// example:
+		await page.goto('/')
+		await page.fill('input[name="username"]', 'mluukkai')
+		await page.fill('input[name="password"]', 'salainen')
+		await page.click('button:text("login")')
+		await expect(page.getByText('logged in')).toBeVisible()
+	// Unlike the backend tests or unit tests done on the React front-end, E2E tests do not need to be located in the same npm project where the code 	is. Make a completely separate project for the E2E tests with the npm init command. Then install Playwright by running in the new project 	directory the command: npm init playwright@latest
+
+	// useful custom scripts:
+	    "test": "playwright test",
+	    "test:ui": "playwright test --ui",
+	    "test:report": "playwright show-report"
+
+	// Playwright tests assume that the system under test is running when the tests are executed. Unlike, for example, backend integration tests, 	Playwright tests do not start the system under test during testing.
+	Make an npm script for the backend, which will enable it to be started in testing mode, i.e. so that NODE_ENV gets the value test:
+		"start:test": "cross-env NODE_ENV=test node --watch index.js"
+	// "playwright test --ui" is to run tests in playwright's UI mode, pretty useful
+
+// EDIT playwright.config.js FOR YOUR CONVIENIENCE
+  timeout: 3000,
+  fullyParallel: false,
+  workers: 1,
+	// specified that all tests be executed one at a time. With the default configuration, the execution happens in parallel, and since our tests use 	a database, parallel execution causes problems.
+
+npx playwright test --grep "Login form is shown"
+	// to run a single e2e test, need to provide the test name description
+	// OR YOU CAN JUST USE THE PLAYWRIGHT'S UI WHEN YOU EXECUTE IT WITH THE SCRIPT  "test:ui": "playwright test --ui"
+
+npx playwright test --grep "Login form is shown" --debug
+	// This command runs problematic tests in debug mode
+	// Playwright-inspector shows the progress of the tests step by step. The arrow-dot button at the top takes the tests one step further. The 	elements found by the locators and the interaction with the browser are visualized in the browser:
+	// Playwright-inspector shows the progress of the tests step by step. The arrow-dot button at the top takes the tests one step further. The 	elements found by the locators and the interaction with the browser are visualized in the browser:
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
