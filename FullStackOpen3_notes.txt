@@ -56,13 +56,26 @@ node --watch index.js
 
 npm install cors
 	// We can allow requests from other origins by using Node's cors middleware in the backend
-	// can remove cors middleware after you create a frontend production build (aka dist folder created with 'npm run build') and copy it into the 	frontend
-	// remove with: npm remove cors 
+	// even with proxy in place, you still want cors for production builds
+
+// creating a proxy for the frontend in vite.config.js when in dev mode 
+	// example:
+		export default defineConfig({
+		  plugins: [react()],
+		  server: {
+		    proxy: {
+		      '/api': {
+		        target: 'http://localhost:3003',
+		        changeOrigin: true
+		      }
+		    }
+		  }
+		})
 
 npm run build 
 	// to create a production build of your application (used in the frontend with vite)
 
-// usefull custom scripts:
+// useful custom scripts for backend: (SIDE NOTE: you sure that these scripts will work in PowerShell?????)
     "build:ui": "rm -rf dist && cd ../frontend && npm run build && cp -r dist ../backend",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
 
@@ -137,6 +150,44 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 5 Testing React apps_______________________________________________________________________________________________________________________________
 
+npm install --save-dev vitest jsdom
+	// Vitest runs tests (Provides test utilities: test, it, describe, expect)
+	// jsdom pretends to be the browser (Simulates: window, document, HTMLElement, events, localStorage)
+	// Together → test React in Node
+	// add this custom script:
+		"test": "vitest run" 
+
+npm install --save-dev @testing-library/react @testing-library/jest-dom
+	// @testing-library/react — render & interact with React components
+		// Renders React components into a DOM (via jsdom)
+		// Lets you query the UI the way a user would:
+			text on the screen
+			labels
+			roles (buttons, headings, inputs)
+		// Simulates user interactions
+		// example:
+			test('renders app title', () => {
+			  render(<App />)
+		  expect(screen.getByText('Blog list')).toBeInTheDocument()
+			})
+	// @testing-library/jest-dom — better assertions for the DOM 
+		// examples:
+			expect(button).toBeInTheDocument()
+			expect(button).toBeDisabled()
+			expect(button).toHaveTextContent('Save')
+
+npm install --save-dev @testing-library/user-event
+	// simulates real user interactions in the browse
+	// examples: mouse down, focus, mouse up, click, related keyboard events, async delays (like real typing)
+
+npm install --save-dev @vitest/coverage-v8
+npx vitest run --coverage
+	// this is to generate a report of all the covered tests for components and services
+	// will generate a "coverage" directory once you run the command
+	// optional custom script to add: 
+		"test:coverage": "vitest run --coverage"
+	// add "coverage/" to the .gitignore file
+	
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________

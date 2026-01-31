@@ -11,5 +11,10 @@ export default defineConfig({
         changeOrigin: true
       }
     }
+  },
+  test: {
+    environment: 'jsdom',
+    globals: true, // With globals: true, there is no need to import keywords such as describe, test and expect into the tests. DOES NOT REMOVE IDE ERROR FLAGS!!! Need to edit the globals value in eslint.config.js to -> { ...globals.browser, ...globals.vitest }
+    setupFiles: './testSetup.js'
   }
 })
