@@ -24,6 +24,8 @@ const slice = createSlice({
   }
 })
 
+const { addAnecdote, replaceAnecdote, setAnecdotes } = slice.actions
+
 export const initializeAnecdotes = () => {
   return async dispatch => {
     const anecdotes = await anecdoteService.getAll()
@@ -46,5 +48,4 @@ export const voteAnecdote = object => {
   }
 }
 
-export const { addAnecdote, replaceAnecdote, setAnecdotes } = slice.actions
 export default slice.reducer
