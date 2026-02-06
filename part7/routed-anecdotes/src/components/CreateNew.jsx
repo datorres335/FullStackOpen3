@@ -32,7 +32,7 @@ const CreateNew = ({ addNew, notify }) => {
       <form onSubmit={handleSubmit}>
         <div>
           content
-          <input name='content'  {...content.props}/>
+          <input name='content' {...content.props}/>
         </div>
         <div>
           author
