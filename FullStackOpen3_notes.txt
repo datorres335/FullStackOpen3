@@ -236,15 +236,51 @@ npm install redux // APPERENTLY ITS DEPRECATED, DON'T USE
 npm install react-redux
 	// lets React components talk to a Redux store.
 	// Without react-redux, you’d have to: 
-		Manually subscribe to the store, 
-		Manually read state, 
-		Manually dispatch actions, 
-		Manually force re-renders
+		- Manually subscribe to the store, 
+		- Manually read state, 
+		- Manually dispatch actions, 
+		- Manually force re-renders
+
+npm install @reduxjs/toolkit
+	// almost always used together with react-redux
+	// an official abstraction layer on top of Redux that:
+		- Reduces boilerplate
+		- Enforces best practices
+		- Makes Redux easier and safer
+		- Includes the most common Redux tools by default
+
+npm install @tanstack/react-query
+	// a library for managing server state in React.
+	// React Query → server state
+	// Server state = API data, DB data, cached responses
+	// What it does for you (core features)
+		1️⃣ Fetching data (without useEffect)
+		2️⃣ Automatic caching 🧠
+		3️⃣ Background refetching & freshness
+		4️⃣ Mutations (POST / PUT / DELETE)
+		5️⃣ Built-in loading & error states
+
+//NOTE TO SELF:
+| Pattern           | When to use                       |
+| ----------------- | --------------------------------- |
+| `useState`        | Simple, local state               |
+| `useReducer`      | Complex local state               |
+| Context + Reducer | App-wide state, small/medium apps |
+| Redux Toolkit     | Large apps, heavy logic           |
+| React Query       | Server state                      |
+React Query is a server-state library, responsible for managing asynchronous operations between your server and client.
+Redux, etc. are client-state libraries that can be used to store asynchronous data, albeit inefficiently when compared to a tool like React Query
+
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 7 React router, custom hooks, styling app with CSS and webpack_____________________________________________________________________________________
 
+npm install react-router-dom
+	// enables routing in React SPAs
+	// Maps URLs to components
+	// Prevents page reloads
+	// Handles navigation, params, redirects
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
