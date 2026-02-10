@@ -7,8 +7,8 @@ import { Button, Input } from './styled'
 import { useNotification } from '../hooks/index'
 
 const LoginForm = () => {
-  const [username, setUsername] = useState('mluukkai')
-  const [password, setPassword] = useState('mluukkai')
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
 
   const dispatch = useDispatch()
   const notifyWith = useNotification()
