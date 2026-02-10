@@ -282,6 +282,24 @@ npm install react-router-dom
 	// Prevents page reloads
 	// Handles navigation, params, redirects
 
+npm outdated --depth 0
+	// to check how up-to-date your dependencies are
+
+npm install -g npm-check-updates
+	// dependencies can be brought up to date by updating the file package.json using this library
+	// -g means it is going to be installed globally
+	// to run the library you use these commands:
+		npm-check-updates
+		ncu -u
+		npm install
+
+npm audit
+	// used to check the security of dependencies. 
+	// It compares the version numbers of the dependencies in your application to a list of the version numbers of dependencies containing known 	security threats in a centralized error database.
+	// then run the command:
+		npm audit fix
+	// by default, audit fix does not update dependencies if their major version number has increased. Updating these dependencies could lead to the 	whole application breaking down.
+
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
