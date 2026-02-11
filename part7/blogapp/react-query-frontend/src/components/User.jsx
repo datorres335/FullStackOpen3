@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom'
-import { useQuery } from 'react-query'
+import { useQuery } from '@tanstack/react-query'
 import usersService from '../services/users'
 
 const User = () => {
   const id = useParams().id
-  const result = useQuery(['users', id], () => usersService.getOne(id))
+  const result = useQuery({ queryKey: ['users', id], queryFn: () => usersService.getOne(id) })
 
   if ( result.isLoading ) {
     return <div>loading data...</div>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { useQuery, useMutation, useQueryClient } from 'react-query'
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 
 import { useNotifier } from '../contexts/notification'
 import blogService from '../services/blogs'
@@ -15,25 +15,28 @@ const Blog = () => {
   const notifyWith = useNotifier()
   const navigate = useNavigate()
 
-  const result = useQuery(['blogs', id], () => blogService.getOne(id))
+  const result = useQuery({ queryKey: ['blogs', id], queryFn: () => blogService.getOne(id) })
   const user = useUser()
 
   const queryClient = useQueryClient()
-  const removeBlogMutation = useMutation(blogService.remove, {
+  const removeBlogMutation = useMutation({
+    mutationFn: blogService.remove,
     onSuccess: () => {
-      queryClient.invalidateQueries('blogs')
+      queryClient.invalidateQueries({ queryKey: ['blogs'] })
     },
   })
 
-  const updateBlogMutation = useMutation(blogService.update, {
+  const updateBlogMutation = useMutation({
+    mutationFn: blogService.update,
     onSuccess: () => {
-      queryClient.invalidateQueries('blogs')
+      queryClient.invalidateQueries({ queryKey: ['blogs'] })
     },
   })
 
-  const commentBlogMutation = useMutation(blogService.comment, {
+  const commentBlogMutation = useMutation({
+    mutationFn: blogService.comment,
     onSuccess: () => {
-      queryClient.invalidateQueries('blogs')
+      queryClient.invalidateQueries({ queryKey: ['blogs'] })
     },
   })
 

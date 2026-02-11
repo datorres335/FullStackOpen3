@@ -1,4 +1,4 @@
-import {  useMutation, useQueryClient } from 'react-query'
+import {  useMutation, useQueryClient } from '@tanstack/react-query'
 import blogService from '../services/blogs'
 import { useNotifier } from '../contexts/notification'
 import { useField } from '../hooks'
@@ -13,9 +13,10 @@ const BlogForm = ({ hideMe }) => {
   const queryClient = useQueryClient()
   const notifyWith = useNotifier()
 
-  const newBlogMutation = useMutation(blogService.create, {
+  const newBlogMutation = useMutation({
+    mutationFn: blogService.create,
     onSuccess: () => {
-      queryClient.invalidateQueries('blogs')
+      queryClient.invalidateQueries({ queryKey: ['blogs'] })
     },
   })
 

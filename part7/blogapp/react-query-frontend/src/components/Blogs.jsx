@@ -1,9 +1,9 @@
-import { useQuery } from 'react-query'
+import { useQuery } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
 import blogService from '../services/blogs'
 
 const Blogs = () => {
-  const result = useQuery('blogs', blogService.getAll)
+  const result = useQuery({ queryKey: ['blogs'], queryFn: blogService.getAll })
 
   if ( result.isLoading ) {
     return <div>loading data...</div>
