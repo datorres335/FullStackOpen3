@@ -255,10 +255,10 @@ npm install @tanstack/react-query
 	// Server state = API data, DB data, cached responses
 	// What it does for you (core features)
 		1️⃣ Fetching data (without useEffect)
-		2️⃣ Automatic caching 🧠
+				2️⃣ Automatic caching 🧠
 		3️⃣ Background refetching & freshness
-		4️⃣ Mutations (POST / PUT / DELETE)
-		5️⃣ Built-in loading & error states
+				4️⃣ Mutations (POST / PUT / DELETE)
+				5️⃣ Built-in loading & error states
 
 //NOTE TO SELF:
 | Pattern           | When to use                       |
@@ -268,6 +268,7 @@ npm install @tanstack/react-query
 | Context + Reducer | App-wide state, small/medium apps |
 | Redux Toolkit     | Large apps, heavy logic           |
 | React Query       | Server state                      |
+
 React Query is a server-state library, responsible for managing asynchronous operations between your server and client.
 Redux, etc. are client-state libraries that can be used to store asynchronous data, albeit inefficiently when compared to a tool like React Query
 
