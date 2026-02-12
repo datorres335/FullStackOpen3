@@ -306,6 +306,13 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 8 GraphQL__________________________________________________________________________________________________________________________________________
 
+NOTE: Apollo can be either used as a standalone server, or it can be hybridized with other Node.js servers (Express, NestJS, Fastify...)
+
+npm install @apollo/server graphql
+	// apollo server = The server framework that runs GraphQL over HTTP (Wraps the graphql engine)
+	// Think of it as: The web server layer + developer-friendly wrapper around GraphQL.
+
+NOTE: When Apollo server is run in development mode, the page http://localhost:PORT# (the port # that was defined) takes us to GraphOS Studio Explorer.
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
