@@ -314,6 +314,15 @@ npm install @apollo/server graphql
 
 NOTE: When Apollo server is run in development mode, the page http://localhost:PORT# (the port # that was defined) takes us to GraphOS Studio Explorer.
 
+npm install @apollo/client graphql
+	// frontend library used to connect your app to a GraphQL server
+	// It lets your React (or React Native / Expo / Next.js) app:
+		Send GraphQL queries
+		Send mutations
+		Cache results
+		Manage loading & error states
+		Automatically update UI when data changes
+
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
