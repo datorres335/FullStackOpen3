@@ -20,8 +20,9 @@ const Books = (props) => {
 
   const allBooks = allBookQuery.data.allBooks
 
-  const genres = [...new Set(allBooks.reduce((s, b) => s.concat(b.genres), []))]
-
+  const genres = [...new Set(allBooks.reduce((s, b) => s.concat(b.genres), []))].filter(g => g !== '') // Sets remove duplicate items unlike arrays
+  //console.log("genres: ", genres);
+  
   const books = genre ? genreBookQuery.data.allBooks : allBooks
 
   return (
@@ -46,9 +47,9 @@ const Books = (props) => {
       </table>
       <div>
         {genres.map(g =>
-          <button onClick={() => setGenre(g)} key={g}>
-            {g===genre ? <strong>{g}</strong> : g}
-          </button>
+            <button onClick={() => setGenre(g)} key={g}>
+              {g===genre ? <strong>{g}</strong> : g}
+            </button>
         )}
         <button onClick={() => setGenre(null)}>{!genre ? <strong>all</strong> : 'all'}</button>
       </div>

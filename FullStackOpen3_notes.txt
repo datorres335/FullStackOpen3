@@ -323,6 +323,10 @@ npm install @apollo/client graphql
 		Manage loading & error states
 		Automatically update UI when data changes
 
+NOTE:
+"Apollo Client and the applications state
+In our example, management of the applications state has mostly become the responsibility of Apollo Client. This is quite a typical solution for GraphQL applications. Our example uses the state of the React components only to manage the state of a form and to show error notifications. As a result, it could be that there are no justifiable reasons to use Redux to manage application state when using GraphQL."
+
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________

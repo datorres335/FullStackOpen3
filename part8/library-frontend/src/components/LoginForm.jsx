@@ -5,7 +5,7 @@ import { STORAGE_KEY } from '../util'
 
 const LoginForm = ({ setError, setToken, setPage, show }) => {
   const [username, setUsername] = useState('mluukkai')
-  const [password, setPassword] = useState('secre')
+  const [password, setPassword] = useState('secret')
 
   const [ login, result ] = useMutation(LOGIN, {
     onError: (error) => {

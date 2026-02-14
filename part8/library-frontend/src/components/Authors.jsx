@@ -6,13 +6,11 @@ import Select from 'react-select'
 
 const Authors = (props) => {
   const result = useQuery(ALL_AUTHORS)
+  //console.log(result);
+  
   const [born, setBorn] = useState(2000)
 
-  const [ editAuthor ] = useMutation(EDIT_AUTHOR, {
-    refetchQueries: [
-      { query: ALL_AUTHORS }
-    ]
-  })
+  const [ editAuthor ] = useMutation(EDIT_AUTHOR)
 
   if (!props.show || result.loading) {
     return null
