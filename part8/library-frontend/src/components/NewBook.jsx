@@ -14,8 +14,7 @@ const NewBook = ({ show, setPage, setError }) => {
 
   const [ createBook ] = useMutation(ADD_BOOK, {
     refetchQueries: [
-      { query: ALL_AUTHORS },
-      { query: ALL_BOOKS, variables: { genre: null } } 
+      { query: ALL_AUTHORS }
     ],
     onError: (error) => {
       console.log("Error on creating book!: ", error)

@@ -1,8 +1,7 @@
 import { ALL_BOOKS } from './queries.js'
 
-
-import {  createHttpLink, split } from '@apollo/client'
-import { setContext } from '@apollo/client/link/context'
+import { ApolloLink, HttpLink } from '@apollo/client'
+import { SetContextLink } from '@apollo/client/link/context'
 
 import { getMainDefinition } from '@apollo/client/utilities'
 import { GraphQLWsLink } from '@apollo/client/link/subscriptions'
@@ -37,7 +36,7 @@ export const getWsHttpSplitLink = () => {
     url: 'ws://localhost:4000/',
   }))
   
-  const authLink = setContext((_, { headers }) => {
+  const authLink = new SetContextLink(({ headers }) => {
     const token = localStorage.getItem(STORAGE_KEY)
     return {
       headers: {
@@ -47,9 +46,9 @@ export const getWsHttpSplitLink = () => {
     }
   })
   
-  const httpLink = createHttpLink({ uri: 'http://localhost:4000' })
+  const httpLink = new HttpLink({ uri: 'http://localhost:4000' })
   
-  const splitLink = split(
+  const splitLink = ApolloLink.split(
     ({ query }) => {
       const definition = getMainDefinition(query);
       return (

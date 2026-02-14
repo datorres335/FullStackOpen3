@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useMutation } from '@apollo/client/react'
 import { LOGIN } from '../queries'
 import { STORAGE_KEY } from '../util'
@@ -7,20 +7,17 @@ const LoginForm = ({ setError, setToken, setPage, show }) => {
   const [username, setUsername] = useState('mluukkai')
   const [password, setPassword] = useState('secret')
 
-  const [ login, result ] = useMutation(LOGIN, {
+  const [ login ] = useMutation(LOGIN, {
+    onCompleted: (data) => {
+      const token = data.login.value
+      setToken(token)
+      setPage('books')
+      localStorage.setItem(STORAGE_KEY, token)
+    },
     onError: (error) => {
       setError(error.message)
     }
   })
-
-  useEffect(() => {
-    if ( result.data ) {
-      const token = result.data.login.value
-      setToken(token)
-      setPage('books')
-      localStorage.setItem(STORAGE_KEY, token)
-    }
-  }, [result.data]) // eslint-disable-line
 
   if (!show) {
     return null
