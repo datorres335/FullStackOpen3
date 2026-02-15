@@ -16,10 +16,21 @@ export const updateCacheWith = (addedBook, cache) => {
     })
   }
 
+  // Update the unfiltered (all books) query
+  const allBooksData = cache.readQuery({ query: ALL_BOOKS, variables: { genre: null } })
+  if (allBooksData) {
+    cache.updateQuery({ query: ALL_BOOKS, variables: { genre: null } }, ({ allBooks }) => {
+      return {
+        allBooks: uniqByTitle(allBooks.concat(addedBook)),
+      }
+    })
+  }
+
+  // Update any genre-specific cached queries
   const genres = addedBook.genres.filter(genre => {
     return cache.readQuery({ query: ALL_BOOKS, variables: { genre } })
   })
-  
+
   genres.forEach(genre => {
     cache.updateQuery({ query: ALL_BOOKS, variables: { genre } }, ({ allBooks }) => {
       return {
@@ -33,7 +44,7 @@ export const STORAGE_KEY = 'library-user-token'
 
 export const getWsHttpSplitLink = () => {
   const wsLink = new GraphQLWsLink(createClient({
-    url: 'ws://localhost:4000/',
+    url: 'ws://localhost:4000',
   }))
   
   const authLink = new SetContextLink(({ headers }) => {

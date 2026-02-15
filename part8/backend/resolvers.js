@@ -146,7 +146,7 @@ const Mutation = {
  
 const Subscription = {
   bookAdded: {
-    subscribe: () => pubsub.asyncIterator('BOOK_ADDED')
+    subscribe: () => pubsub.asyncIterableIterator('BOOK_ADDED')
   }
 }
 

@@ -4,10 +4,8 @@ const { ApolloServerPluginDrainHttpServer } = require('@apollo/server/plugin/dra
 const { makeExecutableSchema } = require('@graphql-tools/schema')
 const { WebSocketServer } = require('ws')
 const { useServer } = require('graphql-ws/use/ws')
-
 const express = require('express')
 const cors = require('cors')
-const bodyParser = require('body-parser')
 const http = require('http')
 
 const typeDefs = require('./schema')
@@ -20,6 +18,7 @@ const startServer = async () => {
 
   const wsServer = new WebSocketServer({
     server: httpServer,
+    path: '/',
   })
 
   const schema = makeExecutableSchema({ typeDefs, resolvers })

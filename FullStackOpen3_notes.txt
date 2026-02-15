@@ -327,6 +327,78 @@ NOTE:
 "Apollo Client and the applications state
 In our example, management of the applications state has mostly become the responsibility of Apollo Client. This is quite a typical solution for GraphQL applications. Our example uses the state of the React components only to manage the state of a form and to show error notifications. As a result, it could be that there are no justifiable reasons to use Redux to manage application state when using GraphQL."
 
+npm install @as-integrations/express5
+	// the official integration layer that connects Apollo Server v4+ to Express 5
+	Without it, Apollo Server can’t plug into Express.
+	// Since Apollo Server 3.0+ doesn't support subscriptions anymore, you need to integrate Apollo Server into another framework does support it 
+	(such as Express or Fastify)
+	// It provides:
+		expressMiddleware()
+		Proper request/response bridging
+		Context handling
+		Compatibility with Express 5’s API
+	// You need it if:
+		You are using Apollo Server v4+
+		You want to run it inside Express 5
+		You want REST + GraphQL on the same server
+		You need custom middleware (auth, logging, cookies, etc.)
+	// You do NOT need it if:
+		You’re using startStandaloneServer
+
+npm install graphql-ws ws @graphql-tools/schema
+	// these three libraries usually show up when you're implementing GraphQL subscriptions (real-time features) manually.
+	// you’re preparing your server to support:
+		WebSockets
+		Real-time GraphQL subscriptions
+		Custom schema creation
+	// graphql-ws: Implements the GraphQL over WebSocket protocol. It allows clients to:
+		Open a persistent WebSocket connection
+		Subscribe to real-time GraphQL events
+		Receive pushed updates from the server
+	// ws: WebSocket server implementation for Node.js. ws provides the actual:
+		WebSocket server
+		TCP handling
+		Low-level socket management
+	// @graphql-tools/schema: Creates an executable GraphQL schema from:
+		Type definitions (SDL)
+		Resolver functions
+		It’s used when you aren’t relying on a framework (like NestJS) to generate the schema for you.
+	// When you build a custom GraphQL server (especially with Apollo Server v4):
+	You need:
+		@graphql-tools/schema → create the schema
+		ws → create WebSocket server
+		graphql-ws → run subscriptions over that WebSocket
+	Together they enable:
+		GraphQL Queries (HTTP)
+	GraphQL Mutations (HTTP)
+	GraphQL Subscriptions (WebSocket)
+
+npm install graphql-subscriptions
+	// It provides a simple Publish/Subscribe (PubSub) system for GraphQL subscriptions.
+	// It helps your server:
+		Publish events when something happens (e.g., message created)
+		Notify all subscribed clients
+		Wire those events into GraphQL subscription resolvers
+		- It does not create WebSockets.
+		- It does not run the server.
+		- It only manages event broadcasting.
+	🎯 Important Limitation
+	The default PubSub implementation is 'In-memory only'
+	Meaning:
+		Works only within one server instance
+		Does NOT scale horizontally
+		Not production-safe for distributed systems
+	In real production systems, people replace the default PubSub with:
+		Redis PubSub
+		Kafka
+		RabbitMQ
+		Google PubSub
+		AWS SNS/SQS
+	Apollo even recommends Redis for scaling subscriptions, AKA:
+		'graphql-redis-subscriptions'
+
+NOTE: 
+- "We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil."
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________

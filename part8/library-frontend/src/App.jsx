@@ -1,18 +1,27 @@
 import { useState, useEffect } from 'react'
-import { useApolloClient } from '@apollo/client/react'
+import { useApolloClient, useSubscription } from '@apollo/client/react'
 import Authors from './components/Authors'
 import Books from './components/Books'
 import NewBook from './components/NewBook'
 import Notification from './components/Notification'
 import LoginForm from './components/LoginForm'
 import Recommend from './components/Recommend'
-import { STORAGE_KEY } from './util'
+import { STORAGE_KEY, updateCacheWith } from './util'
+import { BOOK_ADDED } from './queries'
 
 const App = () => {
   const [page, setPage] = useState('authors')
   const [errorMessage, setErrorMessage] = useState(null)
   const [token, setToken] = useState(() => localStorage.getItem(STORAGE_KEY)) // only called once during initial render
   const client = useApolloClient()
+
+  useSubscription(BOOK_ADDED, {
+    onData: ({ data, client }) => {
+      const addedBook = data.data.bookAdded
+      setErrorMessage(`${addedBook.title} by ${addedBook.author.name} added`)
+      updateCacheWith(addedBook, client.cache)
+    }
+  })
 
   useEffect(() => {
     if (errorMessage) {
