@@ -399,13 +399,27 @@ npm install graphql-subscriptions
 
 NOTE: 
 - "We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil."
+
+
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 9 TypeScript_______________________________________________________________________________________________________________________________________
+npm install --save-dev ts-node typescript
+	// ts-node allows you to run TypeScript files directly, without compiling them first.
+	// add this costume script to your package.json:
+		"ts-node": "ts-node"
+
+npm install --save-dev @types/express
+	// need to include the types for all the packages you are going to be using with typescript
+	// Make sure to install them in the devDependencies section
 
 
-** WATCH THIS VIDEO AFTER YOU FINISH PART 9 TypeScript: Next js Tutorial for Beginners | Nextjs 13 (App Router) with TypeScript - left off at:
+
+
+
+** WATCH THIS VIDEO AFTER YOU FINISH PART 9 TypeScript: 
+Next js Tutorial for Beginners | Nextjs 13 (App Router) with TypeScript - left off at:
 https://www.youtube.com/watch?v=ZVnjOPwW4ZA
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________

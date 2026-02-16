@@ -6,26 +6,84 @@ TO FIND ALL LINKS IN A WEB PAGE:
 
 Part 1 Introduction to React____________________________________________________________________________________________________________________________
 a Introduction to React
+https://react.dev/
+https://vite.dev/
+https://vite.dev/config/server-options.html#server-port
+https://react.dev/learn/your-first-component
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+https://react.dev/learn/writing-markup-with-jsx
+https://react.dev/learn/passing-props-to-a-component
+https://eslint.org/
+https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prop-types.md
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/footer
+https://react.dev/reference/react/Fragment
 
 b JavaScript
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+https://en.wikipedia.org/wiki/Immutable_object
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#object_literals
+https://rse.github.io/es6-features/#Constants
+https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+https://egghead.io/ 
+	- Expert led courses for professional front-end web developers. (TanStack, React, Next.js, TypeScript, JavaScript, etc...)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Data_structures
+https://react.dev/reference/react/hooks
+https://javascript.info/
 
 c Component state, event handlers
+https://react.dev/learn/state-a-components-memory
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button
+https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent
+https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+https://react.dev/learn/responding-to-events
+https://react.dev/learn/sharing-state-between-components
 
 d A more complex state, debugging React apps
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+https://react.dev/learn/conditional-rendering
+https://react.dev/learn
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 2 Communicating with server________________________________________________________________________________________________________________________
 a Rendering a collection, modules
+https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key
+https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/
 
 b Forms
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms
+https://react.dev/learn/responding-to-events
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
+https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable
+https://react.dev/learn/updating-objects-in-state#why-is-mutating-state-not-recommended-in-react
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+https://developer.mozilla.org/en-US/docs/Web/API/Window/alert
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
 c Getting data from server
+https://github.com/typicode/json-server
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model
+https://medium.com/techtrument/multithreading-javascript-46156179cf9a
+https://github.com/axios/axios
+https://react.dev/reference/react/hooks#effect-hooks
+https://react.dev/reference/react/useEffect
+https://react.dev/reference/react/useEffect#parameters
 
 d Altering data in server
+https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm
 
 e Adding styles to React app
+https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics
+https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
@@ -43,57 +101,127 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 4 Testing Express servers, user administration_____________________________________________________________________________________________________
+a Structure of backend application, introduction to testing
 
+b Testing the backend
+
+c User administration
+
+d Token authentication
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 5 Testing React apps_______________________________________________________________________________________________________________________________
+a Login in frontend
 
+b props.children and component refs
+
+c Testing React apps
+
+d End to end testing: Playwright
+
+e End to end testing: Cypress
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 6 Advanced state management _______________________________________________________________________________________________________________________
+a Flux-architecture and Redux
 
+b Many reducers
+
+c Communicating with server in a Redux application
+
+d React Query, useReducer and the context
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 7 React router, custom hooks, styling app with CSS and webpack_____________________________________________________________________________________
+a React Router
 
+b Custom hooks
+
+c More about styles
+
+d Webpack
+
+e Class components, Miscellaneous
+
+f Exercises: extending the bloglist
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 8 GraphQL__________________________________________________________________________________________________________________________________________
+a GraphQL-server
 
+b React and GraphQL
+
+c Database and user administration
+
+d Login and updating the cache
+
+e Fragments and subscriptions
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 9 TypeScript_______________________________________________________________________________________________________________________________________
+a Background and introduction
 
+b First steps with TypeScript
+
+c Typing an Express app
+
+d React with types
+
+e Grande finale: Patientor
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 10 React Native____________________________________________________________________________________________________________________________________
+a Introduction to React Native
 
+b React Native basics
+
+c Communicating with server
+
+d Testing and extending our application
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 11 CI/CD___________________________________________________________________________________________________________________________________________
+a Introduction to CI/CD
 
+b Getting started with GitHub Actions
+
+c Deployment
+
+d Keeping green
+
+e Expanding Further
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 12 Containers______________________________________________________________________________________________________________________________________
+a Introduction to Containers
 
+b Building and configuring environments
+
+c Basics of Orchestration
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 13 Using relational databases______________________________________________________________________________________________________________________
+a Using relational databases with Sequelize
+
+b Join tables and queries
+
+c Migrations, many-to-many relationships
+
