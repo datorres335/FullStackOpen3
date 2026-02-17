@@ -1,10 +1,12 @@
+import { isNotNumber } from "./utils";
+
 const args = process.argv;
 
 if (args.length !== 4) {
   throw new Error('Wrong number of arguments');
 }
 
-if (isNaN(Number(args[2])) || isNaN(Number(args[3]))) {
+if (isNotNumber(args[2]) || isNotNumber(args[3])) {
   throw new Error('Arguments should be numbers');
 }
 
