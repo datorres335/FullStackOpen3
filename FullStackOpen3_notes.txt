@@ -409,6 +409,8 @@ npm install --save-dev ts-node typescript
 	// ts-node allows you to run TypeScript files directly, without compiling them first.
 	// add this costume script to your package.json:
 		"ts-node": "ts-node"
+	// NOTE: IT IS NOT ADVISABLE TO USE ts-node IN OFFICIAL APPLICATIONS
+	 it is advisable to use the official TypeScript compiler that comes with the typescript npm-package. The official compiler generates and packages 	 JavaScript files from the .ts files so that the built production version won't contain any TypeScript code anymore. 
 
 npm install --save-dev @types/express
 	// need to include the types for all the packages you are going to be using with typescript
@@ -431,6 +433,18 @@ npm install --save-dev @eslint/js @types/eslint__js typescript-eslint
 npm install --save-dev @stylistic/eslint-plugin
 	// Provides formatting/style rules removed from ESLint core
 	// If you're using Prettier → you probably don’t need this.
+
+ npm run tsc -- --init
+	// this will generate a tsconfig.json file for us
+	// Note: we must have this custom script set up: 
+		"tsc": "tsc"
+
+npm run tsc
+	// creates a production build by running the TypeScript compiler
+	// the directory "build" should automatically be generated (or what ever directory is specified in your tsconfig.json file)
+	// add this custom script once you have the production build:
+		"start": "node build/index.js"
+			// This will start your production mode build
 
 
 
