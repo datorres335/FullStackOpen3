@@ -1,29 +1,5 @@
 import { isNotNumber } from "./utils";
 
-const args = process.argv;
-
-if (args.length < 4) {
-  throw new Error('Too few arguments');
-}
-
-const argTarget = args[2];
-
-if (isNotNumber(argTarget)) {
-  throw new Error('Argements should be numbers')
-}
-
-const target = Number(argTarget);
-
-const argDays = args.slice(3);
-
-for (const dayArg of argDays) {
-  if (isNotNumber(dayArg)) {
-    throw new Error('Arguments should be numbers');
-  }
-}
-
-const days = argDays.map(d => Number(d));
-
 interface ExerciseResult {
   periodLength: number,
   trainingDays: number,
@@ -42,15 +18,15 @@ const calculateRating = (target: number, average: number): 1 | 2 | 3 => {
     return 2;
   }
 
-  return 3
-}
+  return 3;
+};
 
-const calculateExercises = (days: number[], target: number): ExerciseResult => {
+export const calculateExercises = (days: number[], target: number): ExerciseResult => {
   const descriptions = {
     1: 'you could do so much more, please',
     2: 'not too bad but could be better',
     3: 'good job!'
-  }
+  };
 
   const periodLength = days.length;
   const sum = days.reduce((s, d) => s + d);
@@ -66,7 +42,33 @@ const calculateExercises = (days: number[], target: number): ExerciseResult => {
     target,
     average
   };
-}
+};
 
-const result = calculateExercises(days, target);
-console.log(result);
+if (require.main === module) {
+  const args = process.argv;
+
+  if (args.length < 4) {
+    throw new Error('Too few arguments');
+  }
+
+  const argTarget = args[2];
+
+  if (isNotNumber(argTarget)) {
+    throw new Error('Argements should be numbers');
+  }
+
+  const target = Number(argTarget);
+
+  const argDays = args.slice(3);
+
+  for (const dayArg of argDays) {
+    if (isNotNumber(dayArg)) {
+      throw new Error('Arguments should be numbers');
+    }
+  }
+
+  const days = argDays.map(d => Number(d));
+
+  const result = calculateExercises(days, target);
+  console.log(result);
+}

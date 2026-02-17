@@ -1,19 +1,6 @@
 import { isNotNumber } from "./utils";
 
-const args = process.argv;
-
-if (args.length !== 4) {
-  throw new Error('Wrong number of arguments');
-}
-
-if (isNotNumber(args[2]) || isNotNumber(args[3])) {
-  throw new Error('Arguments should be numbers');
-}
-
-const height = Number(args[3]);
-const weight = Number(args[4]);
-
-const calculateBmi = (height: number, weight: number): string => {
+export const calculateBmi = (height: number, weight: number): string => {
   const bmi = weight / ((height / 100) * (height / 100));
 
   const limits = [
@@ -28,13 +15,26 @@ const calculateBmi = (height: number, weight: number): string => {
 
   for (const { value, type } of limits) {
     if (bmi < value) {
-      return type
+      return type;
     }
   }
 
   return "Obese (Class III)";
 };
 
-const bmi = calculateBmi(height, weight);
+if (require.main === module) {
+  const args = process.argv;
 
-console.log(bmi);
+  if (args.length !== 4) {
+    throw new Error('Wrong number of arguments');
+  }
+
+  if (isNotNumber(args[2]) || isNotNumber(args[3])) {
+    throw new Error('Arguments should be numbers');
+  }
+
+  const height = Number(args[2]);
+  const weight = Number(args[3]);
+
+  console.log(calculateBmi(height, weight));
+}

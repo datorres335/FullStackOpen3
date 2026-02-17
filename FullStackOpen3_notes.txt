@@ -413,6 +413,24 @@ npm install --save-dev ts-node typescript
 npm install --save-dev @types/express
 	// need to include the types for all the packages you are going to be using with typescript
 	// Make sure to install them in the devDependencies section
+	// When installing new types into your project, you may need to reopen the file in the editor to get VS Code in sync.
+
+npm install --save-dev ts-node-dev
+	// enables auto-reloading on the browser when you make changes to your code
+
+npm install --save-dev @eslint/js @types/eslint__js typescript-eslint
+	// @eslint/js:
+		Official ESLint JS rule configs
+	// typescript-eslint: This is the modern TypeScript integration for ESLint.
+		It combines what used to be:
+			@typescript-eslint/parser
+			@typescript-eslint/eslint-plugin
+	// @types/eslint__js:
+		It provides TypeScript type definitions for @eslint/js.
+
+npm install --save-dev @stylistic/eslint-plugin
+	// Provides formatting/style rules removed from ESLint core
+	// If you're using Prettier → you probably don’t need this.
 
 
 
