@@ -418,7 +418,10 @@ npm install --save-dev @types/express
 	// When installing new types into your project, you may need to reopen the file in the editor to get VS Code in sync.
 
 npm install --save-dev ts-node-dev
+	// used only in the backend!
 	// enables auto-reloading on the browser when you make changes to your code
+	// add a custom script similar to this once you add this library:
+		"dev": "ts-node-dev src/index.ts"
 
 npm install --save-dev @eslint/js @types/eslint__js typescript-eslint
 	// @eslint/js:
