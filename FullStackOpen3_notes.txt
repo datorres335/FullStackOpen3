@@ -446,7 +446,21 @@ npm run tsc
 		"start": "node build/index.js"
 			// This will start your production mode build
 
-
+npm install zod
+	// Zod is a TypeScript-first schema validation library.
+	// Its purpose:
+		✅ Validate runtime data
+		✅ Infer static TypeScript types from schemas
+		✅ Keep runtime validation and compile-time types in sync
+	// TypeScript types:
+		Only exist at compile time
+		Do NOT validate data at runtime
+	// This does NOT protect you from:
+		API requests
+		JSON input
+		Database responses
+		Form submissions
+		Because TypeScript disappears at runtime.
 
 
 
