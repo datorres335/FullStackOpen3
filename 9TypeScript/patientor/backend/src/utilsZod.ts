@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { NewPatient, Gender, EntryWithoutId } from "./types";
+import { NewPatient, Gender, EntryWithoutId, Diagnosis } from "./types";
 
 const NewPatientSchema = z.object({
   name: z.string(),
@@ -13,7 +13,7 @@ const BaseEntrySchema = z.object({
   date: z.iso.date(),
   specialist: z.string(),
   description: z.string(),
-  diagnosisCodes: z.array(z.string()).optional(),
+  diagnosisCodes: z.array(z.string() as z.ZodType<Diagnosis['code']>).optional(),
 });
 
 const HealthCheckEntrySchema = BaseEntrySchema.extend({
