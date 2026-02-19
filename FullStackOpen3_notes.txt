@@ -52,7 +52,7 @@ node --watch index.js
 *.rest
 	// once you have the plugin "REST client" installed, you can create .rest files to test out HTTP requests in the backend
 		// ex: GET http://localhost:3001/api/notes
-	// .rest files are typically placed in a "requsts" directory in the root folder
+	// .rest files are typically placed in a "requests" directory in the root folder
 
 npm install cors
 	// We can allow requests from other origins by using Node's cors middleware in the backend
@@ -464,6 +464,9 @@ npm install zod
 		Database responses
 		Form submissions
 		Because TypeScript disappears at runtime.
+
+"The more code you read, the better you will be at understanding it. 
+You will most likely read far more code than you are going to produce throughout your life."
 
 
 
