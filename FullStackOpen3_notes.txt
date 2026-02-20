@@ -514,6 +514,20 @@ NOTE: make sure add ".expo/" to your .gitignore file, it is not included by defa
 
 Note: To open Developer menu: Shake your device (or press Ctrl + m on Android emulator)
 
+npm install --save-dev eslint @babel/eslint-parser eslint-plugin-react eslint-plugin-react-native
+
+npx react-devtools
+	// It’s a standalone debugging tool for react applications.
+		It allows you to:
+		-Inspect your component tree
+		-View props
+		-View state
+		-Track hooks
+		-See context values
+		-Detect unnecessary re-renders
+	// It’s essentially a visual debugger for React components.
+	// might have to use the command "adb reverse tcp:8097 tcp:8097" to get the react-devtools to connect to your emulator instance
+
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
