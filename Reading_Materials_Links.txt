@@ -7,9 +7,23 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 0 Fundamentals of Web apps___________________________________________________________________________________________________________________________
 a General info
-
 b Fundamentals of Web apps
-
+https://developer.mozilla.org/en-US/docs/Web/HTTP
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/GET
+https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Type
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div
+https://www.geeksforgeeks.org/system-design/unified-modeling-language-uml-sequence-diagrams/
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/head
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link
+https://developer.mozilla.org/en-US/docs/Web/CSS
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Class_selectors
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/class
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Your_first_form
+https://en.wikipedia.org/wiki/Single-page_application
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
@@ -100,12 +114,56 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 3 Programming a server with NodeJS and Express ____________________________________________________________________________________________________
 a Node.js and Express
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+https://github.com/typicode/json-server
+https://developer.mozilla.org/en-US/docs/Glossary/Truthy
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types
+https://github.com/Huachao/vscode-restclient/blob/master/README.md#usage
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+https://expressjs.com/en/api.html
+https://github.com/expressjs/morgan
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
 
 b Deploying app to internet
+https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Same-origin_policy
+https://github.com/expressjs/cors
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS
+https://render.com/
+https://dashboard.render.com/login
+https://vite.dev/guide/build.html
+https://vite.dev/config/server-options.html#server-proxy
+https://martinfowler.com/bliki/DeploymentPipeline.html
 
 c Saving data to MongoDB
+https://www.mongodb.com/
+https://www.mongodb.com/docs/manual/core/databases-and-collections/
+https://www.mongodb.com/docs/manual/core/document/
+https://www.mongodb.com/products/platform/atlas-database
+https://mongoosejs.com/index.html
+https://mongoosejs.com/docs/guide.html#schemas
+https://mongoosejs.com/docs/models.html
+https://mongoosejs.com/docs/api/model.html#Model.find()
+https://mongoosejs.com/docs/api/model.html#Model.findById()
+https://mongoosejs.com/docs/api/model.html#Model.findByIdAndDelete()
+https://mongoosejs.com/docs/documents.html#updating-using-queries
+https://nodejs.org/docs/latest-v18.x/api/process.html#process_process_argv
+https://github.com/motdotla/dotenv#readme
+https://expressjs.com/en/guide/error-handling.html
+https://javascript.info/promise-chaining
 
 d Validation and ESLint
+https://mongoosejs.com/docs/validation.html
+https://mongoosejs.com/docs/validation.html#built-in-validators
+https://mongoosejs.com/docs/validation.html#custom-validators
+https://eslint.org/
+https://eslint.org/docs/latest/use/configure/configuration-files#using-predefined-configurations
+https://eslint.style/rules
+https://eslint.org/docs/latest/use/configure/plugins
+https://eslint.org/docs/latest/use/configure/ignore
+https://eslint.org/docs/latest/rules/
+https://github.com/airbnb/javascript
+https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________

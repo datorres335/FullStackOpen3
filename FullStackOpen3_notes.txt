@@ -469,15 +469,50 @@ npm install zod
 You will most likely read far more code than you are going to produce throughout your life."
 
 
-
-** WATCH THIS VIDEO AFTER YOU FINISH PART 9 TypeScript: 
-Next js Tutorial for Beginners | Nextjs 13 (App Router) with TypeScript - left off at:
-https://www.youtube.com/watch?v=ZVnjOPwW4ZA
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 10 React Native____________________________________________________________________________________________________________________________________
+npx create-expo-app rate-repository-app --template expo-template-blank@sdk-50
+	// NOTE: NOT RECOMMENDED TO USE THIS SPECIFIC TEMPLATE FOR NEW PROJECTS!!! (refer to below 2 commands)
+	// create-expo-app is the official project scaffolding tool from Expo.
+	// expo-template-blank: This tells Expo to use the minimal starter template, which includes:
+		- A basic App.js
+		- No navigation
+		- No extra libraries
+		- Clean starting point
+	// @sdk-50: SDK 50 ensures:
+		- You’re using the correct environment for that version
+		- Compatibility with course material (very common in university assignments)
+		- Stability across team members
+	// after you run the above command, you'll be able to run these commands below:
+		- npm run android
+		- npm run ios # you need to use macOS to build the iOS project - use the Expo app if you need to do iOS development without a Mac
+		- npm run web
+		- npm start  // this will just prompt you to choose between many different options such as:
+			› Press a │ open Android
+			› Press w │ open web
+			› Press j │ open debugger	etc...
 
+npx create-expo-app social-game
+	// Gives you a minimal app with TypeScript (by default in newer versions).
+
+npx create-expo-app social-game --template tabs
+	// This gives you:
+		- Navigation pre-configured
+	 	- Multiple screens
+		- A more realistic app structure
+
+npx expo install react-native-web@~0.19.6 react-dom@18.2.0 @expo/metro-runtime@~3.1.1
+	// react-native-web: Allows React Native components to render in a web browser.
+		Normally: View, Text, ScrollView are mobile components.
+	// react-dom: Renders React components into the browser DOM.
+	// @expo/metro-runtime: Makes Expo + Metro work in browser
+	// NOTE: IF YOU ARE GOING TO USE NEXT.JS FOR THE WEB APP, YOU DON'T NEED ANY OF THESE LIBRARIES IN EXPO
+
+NOTE: make sure add ".expo/" to your .gitignore file, it is not included by default
+
+Note: To open Developer menu: Shake your device (or press Ctrl + m on Android emulator)
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
@@ -496,3 +531,13 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 13 Using relational databases______________________________________________________________________________________________________________________
 
+
+
+
+
+
+
+
+** WATCH THIS VIDEO AFTER YOU FINISH PART 9 TypeScript: 
+Next js Tutorial for Beginners | Nextjs 13 (App Router) with TypeScript - left off at:
+https://www.youtube.com/watch?v=ZVnjOPwW4ZA
