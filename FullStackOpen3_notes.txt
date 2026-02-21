@@ -473,6 +473,8 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 10 React Native____________________________________________________________________________________________________________________________________
+NOTE: Using npx expo install (rather than npm install) is recommended for Expo packages because it automatically resolves the version compatible with your 	Expo SDK version (53 in your case for this tutorial).
+
 npx create-expo-app rate-repository-app --template expo-template-blank@sdk-50
 	// NOTE: NOT RECOMMENDED TO USE THIS SPECIFIC TEMPLATE FOR NEW PROJECTS!!! (refer to below 2 commands)
 	// create-expo-app is the official project scaffolding tool from Expo.
@@ -510,8 +512,6 @@ npx expo install react-native-web@~0.19.6 react-dom@18.2.0 @expo/metro-runtime@~
 	// @expo/metro-runtime: Makes Expo + Metro work in browser
 	// NOTE: IF YOU ARE GOING TO USE NEXT.JS FOR THE WEB APP, YOU DON'T NEED ANY OF THESE LIBRARIES IN EXPO
 
-NOTE: make sure add ".expo/" to your .gitignore file, it is not included by default
-
 Note: To open Developer menu: Shake your device (or press Ctrl + m on Android emulator)
 
 npm install --save-dev eslint @babel/eslint-parser eslint-plugin-react eslint-plugin-react-native
@@ -527,6 +527,19 @@ npx react-devtools
 		-Detect unnecessary re-renders
 	// It’s essentially a visual debugger for React components.
 	// might have to use the command "adb reverse tcp:8097 tcp:8097" to get the react-devtools to connect to your emulator instance
+
+npx expo install expo-constants
+	// expo-constants provides system-level information about the app and device at runtime.
+	// It gives you read-only values like:
+		App version
+		App name
+		Bundle ID
+		Device info
+		Platform info
+		Execution environment (Expo Go, dev client, standalone build)
+	// Example: paddingTop: Constants.statusBarHeight
+	// Using npx expo install (rather than npm install) is recommended for Expo packages because it automatically resolves the version compatible with 	your Expo SDK version (53 in your case).
+	
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
