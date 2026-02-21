@@ -540,6 +540,19 @@ npx expo install expo-constants
 	// Example: paddingTop: Constants.statusBarHeight
 	// Using npx expo install (rather than npm install) is recommended for Expo packages because it automatically resolves the version compatible with 	your Expo SDK version (53 in your case).
 	
+npx expo install react-router-native
+
+npx expo install yup formik
+	// Formik — Form State Management: Makes handling forms in React much easier. Without Formik, you’d manually manage:
+		useState for each input
+		onChange handlers
+		onBlur
+		errors
+		touched
+		Submission logic
+		Validation triggering
+	// Yup — Schema-Based Validation: Defines structured validation rules for objects.
+	// Why They’re Installed Together: Formik supports Yup natively. You pass the schema to Formik
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
