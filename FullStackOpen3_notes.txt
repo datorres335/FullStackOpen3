@@ -517,6 +517,8 @@ Note: To open Developer menu: Shake your device (or press Ctrl + m on Android em
 npm install --save-dev eslint @babel/eslint-parser eslint-plugin-react eslint-plugin-react-native
 
 npx react-devtools
+	// ACTUALLY DON'T USE THIS COMMAND!!!!!!!!!
+		INSTEAD IN THE TERMINAL WHERE YOU RUNNING EXPO, PRESS "j" TO OPEN THE DEVTOOL  !!!!!!!!!!!!!!
 	// It’s a standalone debugging tool for react applications.
 		It allows you to:
 		-Inspect your component tree
@@ -527,6 +529,8 @@ npx react-devtools
 		-Detect unnecessary re-renders
 	// It’s essentially a visual debugger for React components.
 	// might have to use the command "adb reverse tcp:8097 tcp:8097" to get the react-devtools to connect to your emulator instance
+	// ACTUALLY DON'T USE THIS COMMAND!!!!!!!!!
+		INSTEAD IN THE TERMINAL WHERE YOU RUNNING EXPO, PRESS "j" TO OPEN THE DEVTOOL  !!!!!!!!!!!!!!
 
 npx expo install expo-constants
 	// expo-constants provides system-level information about the app and device at runtime.
@@ -553,6 +557,11 @@ npx expo install yup formik
 		Validation triggering
 	// Yup — Schema-Based Validation: Defines structured validation rules for objects.
 	// Why They’re Installed Together: Formik supports Yup natively. You pass the schema to Formik
+
+npm install @expo/metro-config@0.17.4
+	// What Is Metro? Metro is the JavaScript bundler used by: Expo and React Native
+		// Its job is to: Bundle your JS files, Resolve imports, Transform modern JS, Serve the dev bundle, Enable fast refresh
+	// Before we can start using Apollo Client, we will need to slightly configure the Metro bundler so that it handles the .cjs file extensions used 		by the Apollo Client. 
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
