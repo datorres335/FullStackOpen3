@@ -567,6 +567,19 @@ npx expo start --clear
 	// once you change expo's app.json file to app.config.js, and make the necessary changes to use environment variables,
 	you need to restart the expo server with this command (restarting the server normally will not be enough)
 
+npx expo install @react-native-async-storage/async-storage
+	// provides persistent key–value storage on the device. It lets you store small amounts of data locally on the user's phone.
+		It remains even if the app closes
+		It survives reloads
+		It survives device restarts
+		It is removed only if:
+			The app is uninstalled
+			You manually clear it
+
+npx expo install expo-secure-store
+	// similar persisted storage as the AsyncStorage but it encrypts the stored data. This makes it more suitable for storing more sensitive data such 	as the user's credit card number.
+
+
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
