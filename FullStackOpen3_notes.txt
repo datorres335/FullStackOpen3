@@ -563,6 +563,10 @@ npm install @expo/metro-config@0.17.4
 		// Its job is to: Bundle your JS files, Resolve imports, Transform modern JS, Serve the dev bundle, Enable fast refresh
 	// Before we can start using Apollo Client, we will need to slightly configure the Metro bundler so that it handles the .cjs file extensions used 		by the Apollo Client. 
 
+npx expo start --clear
+	// once you change expo's app.json file to app.config.js, and make the necessary changes to use environment variables,
+	you need to restart the expo server with this command (restarting the server normally will not be enough)
+
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
