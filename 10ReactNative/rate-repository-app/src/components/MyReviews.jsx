@@ -41,6 +41,8 @@ const DeleteReviewButton = ({ onPress, ...props }) => {
   ];
 
   const deleteWithConfirmation = () => {
+    console.log('Delete button pressed');
+    // NOTE: Alert.alert DOES NOT WORK ON EXPO WEB!!!
     Alert.alert(
       'Delete review',
       'Are you sure you want to delete this review?',

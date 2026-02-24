@@ -10,19 +10,32 @@ const styles = StyleSheet.create({
     minWidth: 64,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: theme.colors.primary,
     borderRadius: theme.roundness,
   },
   text: {
     color: 'white',
   },
+  colorPrimary: {
+    backgroundColor: theme.colors.primary,
+  },
+  colorError: {
+    backgroundColor: theme.colors.error,
+  },
+  pressable: {
+    flexGrow: 1,
+  }
 });
 
-const Button = ({ children, style, ...props }) => {
-  const buttonStyle = [styles.container, style];
+const Button = ({ children, style, color = 'primary', ...props }) => {
+  const buttonStyle = [
+    styles.container,
+    style,
+    color === 'primary' && styles.colorPrimary,
+    color === 'error' && styles.colorError,
+  ];
 
   return (
-    <Pressable {...props}>
+    <Pressable style={styles.pressable} {...props}>
       <View style={buttonStyle}>
         <Text style={styles.text} fontWeight="bold">
           {children}
