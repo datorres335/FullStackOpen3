@@ -2,6 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { NativeRouter } from 'react-router-native';
 import { ApolloProvider } from '@apollo/client/react';
 
+import { LogBox } from 'react-native'; // used to remove deprecated error
+LogBox.ignoreLogs(['props.pointerEvents is deprecated']);
+
 import Main from './src/components/Main';
 import createApolloClient from './src/utils/apolloClient';
 import AuthStorage from './src/utils/authStorage';

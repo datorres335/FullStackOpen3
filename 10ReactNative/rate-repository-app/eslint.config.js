@@ -15,7 +15,7 @@ module.exports = [
         version: "detect",
       },
     },
-    extends: ["eslint:recommended", "plugin:react/recommended"],
+    extends: ["eslint:recommended", "plugin:react/recommended", "plugin:jest/recommended"],
     parser: "@babel/eslint-parser",
     parserOptions: {
       requireConfigFile: false,

@@ -1,7 +1,9 @@
 import { View, Image, StyleSheet } from 'react-native';
+import * as Linking from 'expo-linking';
 
 import theme from '../theme';
 import Text from './Text';
+import Button from './Button';
 import formatInThousands from '../utils/formatInThousands';
 
 const styles = StyleSheet.create({
@@ -59,10 +61,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const CountItem = ({ label, count }) => {
+const CountItem = ({ label, count, ...props }) => {
   return (
     <View style={styles.countItem}>
-      <Text style={styles.countItemCount} fontWeight="bold">
+      <Text style={styles.countItemCount} fontWeight="bold" {...props}>
         {formatInThousands(count)}
       </Text>
       <Text color="textSecondary">{label}</Text>
@@ -70,7 +72,7 @@ const CountItem = ({ label, count }) => {
   );
 };
 
-const RepositoryItem = ({ repository }) => {
+const RepositoryItem = ({ repository, showGithubLink = false, ...props }) => {
   const {
     fullName,
     description,
@@ -80,10 +82,15 @@ const RepositoryItem = ({ repository }) => {
     ratingAverage,
     reviewCount,
     ownerAvatarUrl,
+    url,
   } = repository;
 
+  const onGithubLinkClick = () => {
+    Linking.openURL(url);
+  }
+
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="repositoryItem" {...props}>
       <View style={styles.topContainer}>
         <View style={styles.avatarContainer}>
           <Image source={{ uri: ownerAvatarUrl }} style={styles.avatar} />
@@ -113,6 +120,11 @@ const RepositoryItem = ({ repository }) => {
         <CountItem count={reviewCount} label="Reviews" />
         <CountItem count={ratingAverage} label="Rating" />
       </View>
+      {showGithubLink && url && (
+        <Button style={styles.githubButton} onPress={onGithubLinkClick}>
+          Open in GitHub
+        </Button>
+      )}
     </View>
   );
 };
