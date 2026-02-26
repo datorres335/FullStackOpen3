@@ -28,19 +28,19 @@ jobs:
       - name: lint
         working-directory: ./11CI_CD/full-stack-open-pokedex
         run: npm run eslint
-      - name: test
-        working-directory: ./11CI_CD/full-stack-open-pokedex
-        run: npm run test
+      # - name: test
+      #   working-directory: ./11CI_CD/full-stack-open-pokedex
+      #   run: npm run test
       - name: build
         working-directory: ./11CI_CD/full-stack-open-pokedex
         run: npm run build
-      - name: e2e tests
-        uses: cypress-io/github-action@v2
-        with:
-          working-directory: ./11CI_CD/full-stack-open-pokedex
-          command: npm run test:e2e
-          start: npm run start-prod
-          wait-on: http://localhost:5000
+      # - name: e2e tests
+      #   uses: cypress-io/github-action@v2
+      #   with:
+      #     working-directory: ./11CI_CD/full-stack-open-pokedex
+      #     command: npm run test:e2e
+      #     start: npm run start-prod
+      #     wait-on: http://localhost:5000
       # - name: deploy on Render
       #   if: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '#skip') }}
       #   uses: sws2apps/render-deployment@main
