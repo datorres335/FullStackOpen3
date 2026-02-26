@@ -1,0 +1,42 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '11CI_CD/**'
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+    paths:
+      - '11CI_CD/**'
+
+jobs:
+  deployment_pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+            node-version: '20'
+      - name: npm install
+        run: npm install
+      - name: lint
+        run: npm run eslint
+      - name: test
+        run: npm run test
+      - name: build
+        run: npm run build
+      - name: e2e tests
+        uses: cypress-io/github-action@v2
+        with:
+          command: npm run test:e2e
+          start: npm run start-prod
+          wait-on: http://localhost:5000
+      # - name: deploy on Render
+      #   if: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '#skip') }}
+      #   uses: sws2apps/render-deployment@main
+      #   with:
+      #     serviceId: ${{ secrets.RENDER_SERVICE_ID }}
+      #     apiKey: ${{ secrets.RENDER_API_KEY }}
