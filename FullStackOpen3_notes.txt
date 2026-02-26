@@ -579,6 +579,86 @@ npx expo install @react-native-async-storage/async-storage
 npx expo install expo-secure-store
 	// similar persisted storage as the AsyncStorage but it encrypts the stored data. This makes it more suitable for storing more sensitive data such 	as the user's credit card number.
 
+npm install --save-dev jest jest-expo eslint-plugin-jest
+	// For testing an Expo based React Native application with Jest, Expo provides a set of Jest configuration in a form of jest-expo preset. In order 	to use ESLint in the Jest's test files, we also need the eslint-plugin-jest plugin for ESLint.
+	// To use the jest-expo preset in Jest, we need to add the following Jest configuration to the package.json file along with the test script:
+	{
+	  // ...
+	  "scripts": {
+	    // other scripts...
+
+	    "test": "jest"
+	  },
+
+	  "jest": {
+	    "preset": "jest-expo",
+	    "transform": {
+	      "^.+\\.jsx?$": "babel-jest"
+	    },
+	    "transformIgnorePatterns": [
+	      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-				navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg|react-router-native)"
+	    ]
+	  },
+	  // ...
+	}
+	// To use the eslint-plugin-jest plugin in ESLint, we need to include it in the plugins and extensions array in 	the .eslintrc.json/eslint.config.js file:
+		// "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:jest/recommended"],
+	// To see that the setup is working, create a directory __tests__ in the src directory and in the created directory create a file example.test.js.
+
+npm install --save-dev --legacy-peer-deps react-test-renderer@18.2.0 @testing-library/react-native @testing-library/jest-native
+	// --legacy-peer-deps: need to include this if the installation fails due to peer dependency issues
+	// How The Packeges Work Together:
+		Jest (test runner)
+		      ↓
+		react-test-renderer (virtual render engine)
+		      ↓
+		@testing-library/react-native (user-style queries)
+		      ↓
+		@testing-library/jest-native (better matchers)
+	// Together they give you a complete React Native testing environment.
+
+npm install use-debounce --legacy-peer-deps
+	// It helps you delay reacting to rapidly changing values. This is called debouncing. Debouncing means:
+		“Wait until the user stops doing something before running the expensive logic.”
+
+npm install react-native-paper --legacy-peer-deps
+	// a UI component library for React Native that implements Material Design.
+	// It gives you ready-made, professionally styled components like:
+		Buttons
+		Text inputs
+		Cards
+		App bars
+		Dialogs
+		Modals
+		Lists
+		FAB (Floating Action Button)
+		Snackbar (toast messages)
+	Instead of building UI components from scratch.
+
+npm install @react-native-picker/picker --legacy-peer-deps
+	// provides a native dropdown / selection component for React Native apps.
+	// You might avoid it if:
+		You want a fully custom-styled dropdown
+		You want identical UI across iOS and Android
+		You’re already using a UI library (like react-native-paper) that provides its own dropdown component
+
+npm install date-fns --legacy-peer-deps
+	// a lightweight JavaScript library for:
+		Formatting dates
+		Parsing dates
+		Comparing dates
+		Calculating differences
+		Manipulating dates (add, subtract, etc.)
+
+npm install expo-linking --legacy-peer-deps
+	// allows your Expo / React Native app to:
+		Open external URLs
+		Handle deep links
+		Respond to incoming links that open your app
+
+IMPORTANT NOTE!!!!!!!!!!!!!!!!!!!!:
+make sure to check out this link to help you build your React Native app!!! It has many USEFUL resources!!!!!
+https://github.com/jondot/awesome-react-native?tab=readme-ov-file
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
@@ -596,8 +676,7 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 13 Using relational databases______________________________________________________________________________________________________________________
-
-
+SKIP THIS PART!!!!!!!!!!!!!!!!!
 
 
 

@@ -171,27 +171,164 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 4 Testing Express servers, user administration_____________________________________________________________________________________________________
 a Structure of backend application, introduction to testing
+https://graylog.org/
+https://www.papertrail.com/
+https://jestjs.io/
+https://vitest.dev/
+https://nodejs.org/docs/latest/api/test.html
+https://nodejs.org/docs/latest/api/assert.html
+https://nodejs.org/docs/latest/api/assert.html#assertstrictequalactual-expected-message
+https://nodejs.org/api/assert.html#assertdeepstrictequalactual-expected-message
+https://lodash.com/
 
 b Testing the backend
+https://github.com/typegoose/mongodb-memory-server
+https://www.npmjs.com/package/cross-env
+https://www.mongodb.com/docs/manual/core/inmemory/
+https://www.docker.com/
+https://github.com/node-config/node-config
+https://github.com/forwardemail/supertest
+https://nodejs.org/api/test.html#afterfn-options
+https://nodejs.org/docs/latest/api/assert.html#assertokvalue-message
+https://nodejs.org/api/test.html#beforeeachfn-options
+https://nodejs.org/api/test.html#testonlyname-options-fn
+https://nodejs.org/api/test.html#filtering-tests-by-name
+https://expressjs.com/en/guide/error-handling.html
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+https://nodejs.org/api/test.html#test-runner-execution-model
 
 c User administration
+https://www.mongodb.com/docs/manual/reference/operator/aggregation/lookup/
+https://github.com/kelektiv/node.bcrypt.js
+https://bytebytego.com/guides/how-to-store-passwords-in-the-database/
+https://github.com/kelektiv/node.bcrypt.js/#a-note-on-rounds
+https://mongoosejs.com/docs/schematypes.html
+https://dev.to/akshatsinghania/mongoose-unique-not-working-16bf
+https://mongoosejs.com/docs/populate.html
+mongodb.com/docs/manual/tutorial/project-fields-from-query-results/#return-the-specified-fields-and-the-_id-field-only
 
 d Token authentication
+https://github.com/auth0/node-jsonwebtoken
+https://www.jwt.io/
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Authorization
+https://www.npmjs.com/package/express-jwt
+https://redis.io/
+https://en.wikipedia.org/wiki/HTTPS
+https://nodejs.org/docs/latest-v18.x/api/https.html
+https://nodejs.org/docs/latest-v18.x/api/http.html
+https://www.npmjs.com/package/bcryptjs
+https://github.com/forwardemail/supertest/issues/398
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 5 Testing React apps_______________________________________________________________________________________________________________________________
 a Login in frontend
+https://react.dev/learn/conditional-rendering#logical-and-operator-
+https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label
+https://react.dev/reference/react-dom/components/input#providing-a-label-for-an-input
+https://developer.mozilla.org/en-US/docs/Web/API/Storage
+https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem
+https://developer.mozilla.org/en-US/docs/Web/API/Storage/getItem
+https://developer.mozilla.org/en-US/docs/Web/API/Storage/removeItem
+https://developer.mozilla.org/en-US/docs/Glossary/Origin
+https://developer.chrome.com/docs/devtools/storage/localstorage
+https://react.dev/reference/react/useEffect
+https://react.dev/reference/react/useEffect#parameters
+https://owasp.org/www-community/attacks/xss/
+https://legacy.reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies#restrict_access_to_cookies
+https://academind.com/tutorials/localstorage-vs-cookies-xss/
+https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html
 
 b props.children and component refs
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display
+https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children
+https://react.dev/learn/sharing-state-between-components
+https://react.dev/learn/referencing-values-with-refs
+https://react.dev/reference/react/useRef
+https://react.dev/reference/react/useImperativeHandle
+https://react.dev/learn/manipulating-the-dom-with-refs
+https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm
+https://github.com/microsoft/vscode-eslint/issues/880#issuecomment-578052807
 
 c Testing React apps
+https://vitest.dev/
+https://github.com/jsdom/jsdom
+https://github.com/testing-library/react-testing-library
+https://github.com/testing-library/jest-dom
+https://testing-library.com/docs/react-testing-library/api/#render
+https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+https://testing-library.com/docs/queries/about/#screen
+https://testing-library.com/docs/queries/bytext/
+https://vitest.dev/api/expect.html#expect
+https://vitest.dev/api/expect.html#tobedefined
+https://jefflongbeard.medium.com/organizing-tests-in-jest-17fc431ff850
+https://testing-library.com/docs/queries/bytestid/
+https://testing-library.com/docs/react-testing-library/api/#container-1
+https://testing-library.com/docs/dom-testing-library/api-debugging/#screendebug
+https://testing-library.com/docs/user-event/intro/
+https://vitest.dev/api/mock
+https://testing-library.com/docs/user-event/setup/
+https://testing-library.com/docs/user-event/convenience/#click
+https://vitest.dev/api/expect.html#tohavelength
+https://vitest.dev/api/mock#mock-calls
+https://testing-library.com/docs/queries/byrole/
+https://testing-library.com/docs/user-event/utility/#type
+https://testing-library.com/docs/queries/byplaceholdertext/
+https://vitest.dev/guide/coverage.html#coverage
+https://vitest.dev/guide/snapshot
 
 d End to end testing: Playwright
+https://www.selenium.dev/
+https://en.wikipedia.org/wiki/Headless_browser
+https://hackernoon.com/flaky-tests-a-war-that-never-ends-9aa32fdef359
+https://playwright.dev/
+https://playwright.dev/docs/writing-tests#navigation
+https://playwright.dev/docs/api/class-page#page-get-by-text
+https://playwright.dev/docs/locators
+https://playwright.dev/docs/api/class-locatorassertions#locator-assertions-to-be-visible
+https://playwright.dev/docs/actionability
+https://playwright.dev/docs/test-timeouts#introduction
+https://playwright.dev/docs/test-timeouts
+https://playwright.dev/docs/test-parallel
+https://playwright.dev/docs/api/class-page#page-get-by-role
+https://playwright.dev/docs/api/class-locator
+https://playwright.dev/docs/api/class-locator#locator-click
+https://playwright.dev/docs/test-ui-mode
+https://playwright.dev/docs/api/class-locator#locator-fill
+https://playwright.dev/docs/api/class-locator#locator-first
+https://playwright.dev/docs/api/class-locator#locator-last
+https://playwright.dev/docs/api/class-locator#locator-all
+https://playwright.dev/docs/api/class-page#page-get-by-test-id
+https://playwright.dev/docs/api/class-page#page-get-by-label
+https://playwright.dev/docs/api/class-apirequestcontext#api-request-context-post
+https://playwright.dev/docs/api/class-page#page-get-by-text
+https://playwright.dev/docs/api/class-page#page-locator
+https://playwright.dev/docs/api/class-locatorassertions#locator-assertions-to-contain-text
+https://playwright.dev/docs/api/class-locatorassertions#locator-assertions-to-have-css
+https://playwright.dev/docs/auth
+https://playwright.dev/docs/locators#locate-by-css-or-xpath
+https://developer.mozilla.org/en-US/docs/Web/XML/XPath
+https://playwright.dev/docs/debug#run-in-debug-mode-1
+https://playwright.dev/docs/api/class-locator#locator-wait-for
+https://playwright.dev/docs/trace-viewer-intro
+https://playwright.dev/docs/api/class-locator#locator-filter
+https://playwright.dev/docs/api/class-locator#locator-get-by-role
+https://playwright.dev/docs/codegen-intro
+https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright
+https://playwright.dev/docs/intro
+https://playwright.dev/docs/locators
+https://playwright.dev/docs/input
+https://playwright.dev/docs/test-assertions
+https://playwright.dev/docs/api/class-playwright
+https://playwright.dev/docs/api/class-page
+https://playwright.dev/docs/api/class-locator
 
 e End to end testing: Cypress
-
+SKIPPED
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
