@@ -6,11 +6,13 @@ on:
       - main
     paths:
       - '11CI_CD/**'
+      - '.github/workflows/**' 
   pull_request:
     branches: [main]
     types: [opened, synchronize]
     paths:
       - '11CI_CD/**'
+      - '.github/workflows/**' 
 
 jobs:
   deployment_pipeline:
