@@ -41,9 +41,14 @@ jobs:
       #     command: npm run test:e2e
       #     start: npm run start-prod
       #     wait-on: http://localhost:5000
-      # - name: deploy on Render
-      #   if: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '#skip') }}
-      #   uses: sws2apps/render-deployment@main
-      #   with:
-      #     serviceId: ${{ secrets.RENDER_SERVICE_ID }}
-      #     apiKey: ${{ secrets.RENDER_API_KEY }}
+
+  deploy:
+    needs: deployment_pipeline
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '#skip') }}
+    steps:
+      - name: Deploy to Render
+        uses: sws2apps/render-deployment@main
+        with:
+          serviceId: ${{ secrets.RENDER_SERVICE_ID }}
+          apiKey: ${{ secrets.RENDER_API_KEY }}
