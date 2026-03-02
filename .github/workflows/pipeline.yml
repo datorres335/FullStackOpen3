@@ -9,6 +9,7 @@ on:
       - '.github/workflows/**' 
   pull_request:
     branches: [main]
+    # Run workflow when PR is opened or when new commits are pushed to the PR
     types: [opened, synchronize]
     paths:
       - '11CI_CD/**'
