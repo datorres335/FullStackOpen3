@@ -16,7 +16,7 @@ on:
       - '.github/workflows/**' 
 
 jobs:
-  deployment_pipeline:
+  build_and_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -44,7 +44,7 @@ jobs:
       #     wait-on: http://localhost:5000
 
   deploy:
-    needs: deployment_pipeline
+    needs: build_and_test
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '#skip') }}
     steps:
@@ -53,3 +53,13 @@ jobs:
         with:
           serviceId: ${{ secrets.RENDER_SERVICE_ID }}
           apiKey: ${{ secrets.RENDER_API_KEY }}
+
+  tag_release:
+    needs: [build_and_test, deploy]
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '#skip') }}
+    steps:
+    - name: Bump version and push tag
+      uses: anothrNick/github-tag-action@1.75.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # if you don't want to set write permissions use a PAT token
