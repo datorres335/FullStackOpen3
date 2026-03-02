@@ -9,13 +9,14 @@ on:
       - '.github/workflows/**' 
   pull_request:
     branches: [main]
+    # Run workflow when PR is opened or when new commits are pushed to the PR
     types: [opened, synchronize]
     paths:
       - '11CI_CD/**'
       - '.github/workflows/**' 
 
 jobs:
-  deployment_pipeline:
+  build_and_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -43,7 +44,7 @@ jobs:
       #     wait-on: http://localhost:5000
 
   deploy:
-    needs: deployment_pipeline
+    needs: build_and_test
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '#skip') }}
     steps:
@@ -52,3 +53,13 @@ jobs:
         with:
           serviceId: ${{ secrets.RENDER_SERVICE_ID }}
           apiKey: ${{ secrets.RENDER_API_KEY }}
+
+  tag_release:
+    needs: [build_and_test, deploy]
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '#skip') }}
+    steps:
+    - name: Bump version and push tag
+      uses: anothrNick/github-tag-action@1.75.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # if you don't want to set write permissions use a PAT token
