@@ -79,12 +79,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Discord Notification - Deployment Succeeded
-      uses: rjstone/discord-webhook-notify@v2
+      uses: sarisia/actions-status-discord@v1
+      if: always()
       with:
-        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-        severity: info
+        webhook: ${{ secrets.DISCORD_WEBHOOK }}
+        status: ${{ job.status }}
         title: "Deployment Successful"
         description: "A new version of the app was successfully deployed."
+        username: GitHub Actions
+        color: 0x0000ff
 
   discord_notify_failure:
     needs: [build_and_test, deploy, tag_release]
@@ -92,14 +95,17 @@ jobs:
     if: ${{ failure() }}
     steps:
     - name: Discord Notification - Build/Deploy Failed
-      uses: rjstone/discord-webhook-notify@v2
+      uses: sarisia/actions-status-discord@v1
+      if: always()
       with:
-        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-        severity: error
+        webhook: ${{ secrets.DISCORD_WEBHOOK }}
+        status: failure
         title: "Build/Deployment Failed"
         description: |
           **Commit:** `${{ github.sha }}`
           **Message:** ${{ github.event.head_commit.message }}
           **Author:** ${{ github.actor }}
           **[View failed run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})**
+        username: GitHub Actions
+        color: 0xff0000
   
