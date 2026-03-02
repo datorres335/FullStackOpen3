@@ -1,0 +1,25 @@
+# NOTE:
+  #  There are many sources of errors in an app. 
+  #  If our application would e.g. depend on a database that would for some reason become unavailable, 
+  #  our application would most likely crash. 
+  #  That's why it would be a good idea to set up a periodic health check that would regularly do an HTTP GET request to our server. 
+  #  We quite often refer to this kind of request as a ping.
+
+name: Healthcheck
+
+on:
+  schedule:
+    - cron: '12 * 1 * *'
+            # minute  hour  day-of-month  month  day-of-week
+
+jobs:
+  ping_the_app:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Pokedex healthcheck
+        uses: jtalk/url-health-check-action@v2
+        with:
+          url: https://fullstackopen3-pokedex.onrender.com/health
+          max-attempts: 3
+          retry-delay: 5s
+          retry-all: true
