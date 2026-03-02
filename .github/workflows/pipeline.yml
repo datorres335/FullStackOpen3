@@ -59,7 +59,9 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '#skip') }}
     steps:
+    - uses: actions/checkout@v4
     - name: Bump version and push tag
       uses: anothrNick/github-tag-action@1.75.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # if you don't want to set write permissions use a PAT token
+        DEFAULT_BUMP: patch
