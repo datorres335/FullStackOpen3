@@ -62,7 +62,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Bump version and push tag
-      uses: anothrNick/github-tag-action@1.75.0
+      uses: anothrNick/github-tag-action@4ed44965e0db8dab2b466a16da04aec3cc312fd8
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DEFAULT_BUMP: patch
@@ -73,3 +73,33 @@ jobs:
         # git commit -m "add user profile page #minor" → bumps minor  (1.0.1 → 1.1.0)
         # git commit -m "redesign API #major"       → bumps major  (1.1.0 → 2.0.0)
         # git commit -m "update readme #skip"       → no tag created at all
+  
+  discord_notify_success:
+    needs: [tag_release]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Discord Notification - Deployment Succeeded
+      uses: rjstone/discord-webhook-notify@v2
+      with:
+        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+        severity: info
+        title: "Deployment Successful"
+        description: "A new version of the app was successfully deployed."
+
+  discord_notify_failure:
+    needs: [build_and_test, deploy, tag_release]
+    runs-on: ubuntu-latest
+    if: ${{ failure() }}
+    steps:
+    - name: Discord Notification - Build/Deploy Failed
+      uses: rjstone/discord-webhook-notify@v2
+      with:
+        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+        severity: error
+        title: "Build/Deployment Failed"
+        description: |
+          **Commit:** `${{ github.sha }}`
+          **Message:** ${{ github.event.head_commit.message }}
+          **Author:** ${{ github.actor }}
+          **[View failed run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})**
+  
