@@ -410,6 +410,7 @@ c Deployment
 d Keeping green
 
 e Expanding Further
+https://github.com/marketplace/actions/actions-status-discord  //DONT USE THE ACTIONS NOTIFICATION THE TUTORIAL PROVIDES!! DOES NOT WORK
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
