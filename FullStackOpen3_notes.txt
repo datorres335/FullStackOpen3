@@ -670,16 +670,51 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 12 Containers______________________________________________________________________________________________________________________________________
+docker -v
+	// to check the version of docker installed
 
+docker container run hello-world
+	// A particularly nice feature of this command is that it can run a container even if the image to run is not downloaded on our device yet
+
+docker container run --help
+	// prints a detailed reference explaining how the docker container run command works, what arguments it accepts, and how each option affects 		container behavior.
+	// "docker container run": Create and run a new container from an image
+
+docker container run -it ubuntu bash
+	// -it === -i -t
+		// The two options, or flags, "-it" make sure we can interact with the container. 
+		// -i: Keep STDIN open even if not attached
+		// -t: Allocate a pseudo-TTY
+
+docker container ls -a
+docker ps -a  (shorthand form of command above)
+	//  list all of the containers with container ls -a, the -a (or --all) will list containers that have already been exited.
+
+docker start <CONTAINER_NAME>
+docker start <CONTAINER_NAME> -i
+	// The start command will start the same container we had previously. "-i" will make it interactive if applicable.
+
+docker kill <CONTAINER_NAME>
+	// stops (exits) a running container
+	
+docker commit CONTAINER-ID-OR-CONTAINER-NAME NEW-IMAGE-NAME  (ex: docker commit hopeful_clarke hello-node-world)
+	// creates a new IMAGE (not a container) from an existing container
+
+docker image ls
+	// list all existing images
+
+docker container run -it --name hello-node node:20 bash
+	// this creates a new (but existing in DockerHub) interactive node:20 container
+	// --name: lets us choose the name for our container instead of docker choosing one for us
+
+docker container cp ./index.js hello-node:/usr/src/app/index.js
+	// cp: copies a file into a container. Must specify where to copy to (file will be created if it doesn't exist)
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 13 Using relational databases______________________________________________________________________________________________________________________
 SKIP THIS PART!!!!!!!!!!!!!!!!!
-
-
-
 
 
 

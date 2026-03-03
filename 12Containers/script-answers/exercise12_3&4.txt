@@ -1,0 +1,8 @@
+docker start competent_swirles -i
+root@a731ab5a79d1:/# apt-get update
+root@a731ab5a79d1:/# apt-get -y install nano
+root@a731ab5a79d1:/# nano /usr/src/app/index.js
+console.log('Hello World')
+root@a731ab5a79d1:/# curl -sL https://deb.nodesource.com/setup_20.x | bash apt install -y nodejs
+root@a731ab5a79d1:/# node /usr/src/app/index.js
+Hello World
