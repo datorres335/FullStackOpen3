@@ -749,6 +749,17 @@ NOTE ON "npm ci" vs "npm install":
 
 docker build -t express-server . ; docker run -p 3000:3000 express-server
 	// you can also chain commands together with a ';' on a powershell terminal (use '&&' for a bash terminal)
+	// NOTE: you don't need such a complicated command if your using docker-compose.yml (which the tutorial has you use later)
+
+ONCE WE HAVE A docker-compose.yml FILE DEFINED WE CAN USE THESE COMMANDS:
+docker compose up
+	// build and run the application
+docker compose up --build
+	// If we want to rebuild the images (when the code has changed in your app)
+docker compose up -d
+	//  run the application in the background
+docker compose down
+	// close running containers
 
 
 Docker Command Hierarchy Tree:
@@ -778,21 +789,39 @@ docker
   │      ├── create     // create a new volume
   │      ├── prune      // remove unused volumes
   │      └── update     // modify volume configuration
-  └── network
-         ├── ls         // list networks
-         ├── rm         // remove a network
-         ├── inspect    // show detailed info about a network
-         ├── create     // create a new network
-         ├── connect    // attach a container to a network
-         ├── disconnect // detach a container from a network
-         ├── prune      // remove unused networks
-         └── update     // modify network configuration
+  ├── network
+  │      ├── ls         // list networks
+  │      ├── rm         // remove a network
+  │      ├── inspect    // show detailed info about a network
+  │      ├── create     // create a new network
+  │      ├── connect    // attach a container to a network
+  │      ├── disconnect // detach a container from a network
+  │      ├── prune      // remove unused networks
+  │      └── update     // modify network configuration
+  └── compose
+         ├── up         // start all services defined in docker-compose.yml
+         ├── down       // stop and remove all services, networks, volumes
+         ├── build      // build images defined in the compose file
+         ├── logs       // view logs from all services
+         ├── ps         // list running services
+         ├── exec       // run a command in a running service container
+         ├── restart    // restart all or specific services
+         └── stop       // stop services without removing them
 
-- container = running things
-- image = templates
-- volume = data storage
-- network = connectivity
+- container: manages one running instance
+- image: manages templates
+- volume: manages persistent data
+- network: manages connectivity
+- compose: manages all of the above together as a single application; multi‑container orchestration (define and run whole app stacks)
 
+QUESTION: 
+	Are containers usually used for microservices architecture apps?
+ANSWER:
+	Containers are a natural fit for microservices, and most modern microservice architectures use them, but it’s not a strict requirement. 		The relationship is strong because containers solve several problems that microservices create.
+	- Why containers and microservices pair so well:
+	Microservices break an application into many small, independently deployable services. That creates challenges around consistency, 			isolation, deployment, scaling, and dependency management. Containers directly address those challenges.
+	- When containers might not be necessary:
+	A monolithic application or a small project with only one or two services may not need containers at all. Containers add operational complexity, 	so they’re most beneficial when scaling or isolating services matters.
 
 
 ________________________________________________________________________________________________________________________________________________________
