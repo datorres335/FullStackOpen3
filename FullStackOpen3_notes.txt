@@ -673,6 +673,11 @@ Part 12 Containers______________________________________________________________
 docker -v
 	// to check the version of docker installed
 
+NOTE: for most commands that start with "docker container", you can omit 'container' from the command and it will still work the same
+	- there are some exceptions tho
+	// you can also avoid having to memorize many of these commands simply by using Docker's GUI (except if your building your image/ container
+		with a Dockerfile)
+
 docker container run hello-world
 	// A particularly nice feature of this command is that it can run a container even if the image to run is not downloaded on our device yet
 
@@ -709,6 +714,86 @@ docker container run -it --name hello-node node:20 bash
 
 docker container cp ./index.js hello-node:/usr/src/app/index.js
 	// cp: copies a file into a container. Must specify where to copy to (file will be created if it doesn't exist)
+
+docker build -t fs-hello-world .
+	// builds your own image with the steps specified in a Dockerfile
+	// -t: lets us give a name to an image
+	// . : You can point to any Dockerfile, but in our case, a simple dot will mean the Dockerfile is in this directory. That is why the command ends 		with a period
+	// After the build is finished, you can run it with docker run fs-hello-world (or run it using Docker's GUI)
+	// We could also open a bash session to the container and observe it's content:
+		$ docker run -it fs-hello-world bash
+		root@2932e32dbc09:/usr/src/app# ls
+		index.js
+
+docker run -p 3000:3000 express-server
+	// -p: This will inform Docker that a port from the host machine should be opened and directed to a port in the container. 
+		// The format is:
+			-p host-port:application-port
+
+npx express-generator my-app
+	// It’s a scaffolding tool for Express.js. It generates a starter project structure for an Express application.
+	// It'll create something like:
+		my-app/	
+		├── app.js
+		├── bin/
+		│   └── www
+		├── routes/
+		│   ├── index.js
+		│   └── users.js
+		├── views/
+		├── public/
+		├── package.json
+
+NOTE ON "npm ci" vs "npm install":
+	// in short: ci creates reliable builds, while install is the one to use when you want to install new dependencies.
+
+docker build -t express-server . ; docker run -p 3000:3000 express-server
+	// you can also chain commands together with a ';' on a powershell terminal (use '&&' for a bash terminal)
+
+
+Docker Command Hierarchy Tree:
+docker
+  ├── container
+  │      ├── run        // create and start a new container from an image
+  │      ├── ls         // list containers (running or all with -a)
+  │      ├── rm         // remove one or more containers
+  │      ├── inspect    // show detailed info about a container
+  │      ├── start      // start an existing, stopped container
+  │      ├── stop       // gracefully stop a running container
+  │      ├── kill       // immediately stop a running container (SIGKILL)
+  │      ├── logs       // view logs from a container
+  │      ├── prune      // remove all stopped containers
+  │      └── exec       // run a command inside a running container
+  ├── image
+  │      ├── build      // build an image from a Dockerfile
+  │      ├── ls         // list images stored locally
+  │      ├── rm         // remove one or more images
+  │      ├── inspect    // show detailed info about an image
+  │      ├── prune      // remove unused images
+  │      └── pull       // download an image from Docker Hub
+  ├── volume
+  │      ├── ls         // list volumes
+  │      ├── rm         // remove a volume
+  │      ├── inspect    // show detailed info about a volume
+  │      ├── create     // create a new volume
+  │      ├── prune      // remove unused volumes
+  │      └── update     // modify volume configuration
+  └── network
+         ├── ls         // list networks
+         ├── rm         // remove a network
+         ├── inspect    // show detailed info about a network
+         ├── create     // create a new network
+         ├── connect    // attach a container to a network
+         ├── disconnect // detach a container from a network
+         ├── prune      // remove unused networks
+         └── update     // modify network configuration
+
+- container = running things
+- image = templates
+- volume = data storage
+- network = connectivity
+
+
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
