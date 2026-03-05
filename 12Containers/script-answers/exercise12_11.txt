@@ -1,0 +1,20 @@
+docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                           NAMES
+10cee519b5a4   redis     "docker-entrypoint.s…"   23 seconds ago   Up 22 seconds   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp     todo-backend-redis-1
+45cdb25db640   mongo     "docker-entrypoint.s…"   23 seconds ago   Up 22 seconds   0.0.0.0:3456->27017/tcp, [::]:3456->27017/tcp   todo-backend-mongo-1
+
+docker exec -it todo-backend-redis-1 redis-cli 
+127.0.0.1:6379> KEYS *
+(empty array)
+
+$ curl -X POST http://localhost:3000/todos -H "Content-Type: application/json" -d "{\"text\": \"test todo\"}"
+{"_id":"69a907662c61d9377b07ff27","text":"test todo","done":false,"__v":0}
+
+127.0.0.1:6379> KEYS *
+1) "created_todos"
+127.0.0.1:6379> SET created_todos 9001
+OK
+127.0.0.1:6379> DEL created_todos
+(integer) 1
+127.0.0.1:6379> KEYS *
+(empty array)
