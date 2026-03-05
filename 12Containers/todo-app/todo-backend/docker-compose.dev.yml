@@ -10,6 +10,14 @@ services:
     volumes: # the mongo-init.js file from your local project directory is "mounted" into the MongoDB container at a specific path. This allows MongoDB to read and execute the initialization script when the container starts up.
       - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
       - mongo_data:/data/db # make sure to add 'mongo_data/' to .gitignore
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    command: ['redis-server', '--appendonly', 'yes']
+    volumes:
+      - redis_data:/data
 
 volumes:
   mongo_data:
+  redis_data:

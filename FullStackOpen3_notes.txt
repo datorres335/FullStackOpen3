@@ -787,6 +787,8 @@ docker exec -it eloquent_nobel bash
 docker exec -it todo-backend-mongo-1 mongosh -u root -p example
 	// "mongosh" is used instead of "bash" to open up Mongo's CLI
 	// "-u root -p example" is needed to authenticate the session (username and password found in docker-compose.dev.yml in our example)
+COMMAND: $env:MONGO_URL="mongodb://the_username:the_password@localhost:3456/the_database"; $env:REDIS_URL="redis://localhost:6379"; npm run dev
+	// use this command once you have redis defined in docker-compose.dev.yml
 
 Docker Command Hierarchy Tree:
 docker
