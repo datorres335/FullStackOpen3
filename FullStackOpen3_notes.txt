@@ -704,6 +704,7 @@ docker kill <CONTAINER_NAME>
 	
 docker commit CONTAINER-ID-OR-CONTAINER-NAME NEW-IMAGE-NAME  (ex: docker commit hopeful_clarke hello-node-world)
 	// creates a new IMAGE (not a container) from an existing container
+	// Remember that all of the changes are lost when the container is deleted. To preserve the changes, you must use commit
 
 docker image ls
 	// list all existing images
@@ -725,10 +726,11 @@ docker build -t fs-hello-world .
 		root@2932e32dbc09:/usr/src/app# ls
 		index.js
 
-docker run -p 3000:3000 express-server
+docker run -p 3030:3000 express-server
 	// -p: This will inform Docker that a port from the host machine should be opened and directed to a port in the container. 
 		// The format is:
 			-p host-port:application-port
+		// use the host-port number in the url to view in browser (ex: localhost:3030) 
 
 npx express-generator my-app
 	// It’s a scaffolding tool for Express.js. It generates a starter project structure for an Express application.
@@ -760,7 +762,31 @@ docker compose up -d
 	//  run the application in the background
 docker compose down
 	// close running containers
-
+docker compose -f docker-compose.dev.yml up
+	// You can use -f flag to specify a file to run the Docker Compose command with
+docker compose -f docker-compose.dev.yml up -d
+	// with -d it will run it in the background
+docker compose -f docker-compose.dev.yml logs -f
+	// To view the output logs. The -f will ensure we follow the logs.
+docker compose -f docker-compose.dev.yml down -v
+	// IMPORTANT: when editing files and running the container again, docker might run an old Docker volume again
+		If you get a situation where a container isn't behaving as expected, try this command then "docker compose -f docker-compose.dev.yml up"
+	// The -v flag removes the associated volumes
+	// had a problem when i added "volumes" to docker-compose.dev.yml and then i tried running the app with:
+		$env:MONGO_URL="mongodb://the_username:the_password@localhost:3456/the_database"; npm run dev
+NOTE:
+	// when the tutorial tells you to run the command (bash command):
+		MONGO_URL=mongodb://localhost:3456/the_database npm run dev
+	// use this instead (powershell command):
+		$env:MONGO_URL="mongodb://localhost:3456/the_database"; npm run dev
+docker volume inspect todo-backend_mongo_data
+	// inspect the details of a volume
+docker exec -it eloquent_nobel bash
+	// exec: lets us interact with a running container
+	// '-it' and 'bash' must also be used in order to interact with the container
+docker exec -it todo-backend-mongo-1 mongosh -u root -p example
+	// "mongosh" is used instead of "bash" to open up Mongo's CLI
+	// "-u root -p example" is needed to authenticate the session (username and password found in docker-compose.dev.yml in our example)
 
 Docker Command Hierarchy Tree:
 docker
@@ -781,6 +807,7 @@ docker
   │      ├── rm         // remove one or more images
   │      ├── inspect    // show detailed info about an image
   │      ├── prune      // remove unused images
+  │      ├── commit     // create a new image from a container's current state
   │      └── pull       // download an image from Docker Hub
   ├── volume
   │      ├── ls         // list volumes

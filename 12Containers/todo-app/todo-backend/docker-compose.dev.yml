@@ -1,0 +1,15 @@
+services:
+  mongo:
+    image: mongo
+    ports:
+      - 3456:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: the_database
+    volumes: # the mongo-init.js file from your local project directory is "mounted" into the MongoDB container at a specific path. This allows MongoDB to read and execute the initialization script when the container starts up.
+      - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - mongo_data:/data/db # make sure to add 'mongo_data/' to .gitignore
+
+volumes:
+  mongo_data:
