@@ -18,6 +18,22 @@ services:
     volumes:
       - redis_data:/data # make sure to add 'redis_data' to .gitignore; UPDATE, YOU ONLY NEED TO INCLUDE IT INTO .gitignore if you have writen this line of code as "./redis_data:/data" (aka bind mounted)
 
+  backend:
+    image: backend-dev
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    ports:
+      - 3000:3000
+    environment:
+      - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - mongo
+      - redis
+    volumes:
+      - ./:/usr/src/app
+
 volumes:
   mongo_data:
   redis_data:

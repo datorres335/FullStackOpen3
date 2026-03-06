@@ -430,7 +430,6 @@ https://hub.docker.com/_/nginx
 https://docs.docker.com/reference/dockerfile#env
 https://docs.docker.com/guides/nodejs/run-tests/
 https://code.visualstudio.com/docs/devcontainers/containers
-https://www.npmjs.com/package/rollup
 https://www.busybox.net/
 https://en.wikipedia.org/wiki/Wget
 https://en.wikipedia.org/wiki/Reverse_proxy

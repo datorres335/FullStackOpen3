@@ -758,6 +758,8 @@ docker compose up
 	// build and run the application
 docker compose up --build
 	// If we want to rebuild the images (when the code has changed in your app)
+docker compose -f docker-compose.dev.yml up --build
+	// NOTE: if you have a running instance of a container and need to run this command, you DON'T need to close the container first
 docker compose up -d
 	//  run the application in the background
 docker compose down
@@ -791,6 +793,7 @@ docker exec -it todo-backend-mongo-1 mongosh -u root -p example
 
 COMMAND: $env:MONGO_URL="mongodb://the_username:the_password@localhost:3456/the_database"; $env:REDIS_URL="redis://localhost:6379"; npm run dev
 	// use this command once you have redis defined in docker-compose.dev.yml
+	// UPDATE NOTE: you can avoid this really long command if you define the env vars in the docker-compose.dev.yml file
 	// you might have to use these commands first:
 		docker compose -f docker-compose.dev.yml down -v
 		docker compose -f docker-compose.dev.yml up -d
@@ -799,6 +802,19 @@ docker exec -it todo-backend-redis-1 redis-cli
 	// you can find out this info from its official docker hub page: 
 		https://hub.docker.com/_/redis
 	// can find the commands used in Redis CLI for tutorial in script-answers/exercise12_11.txt
+
+docker run -p 5173:5173 -v "$(pwd):/usr/src/app/" hello-front-dev
+	// -v "$(pwd):/usr/src/app/" :  
+		mounts your current host directory into the container’s working directory, creating a live, two‑way sync between your machine and the 			container.
+	// you must have this line in your dev.Dockerfile for this to work:
+		CMD ["npm", "run", "dev", "--", "--host"]
+
+docker compose -f docker-compose.dev.yml run debug-helper wget -O - http://app:5173
+	// NOTE: you don't need to stop a running instance of container to run this command
+	// wget: a simple HTTP client (similar function to curl) (need the busybox image defined in your docker compose dev file)
+	// -O: print the response to stdout instead of saving to a file
+	// http://app:5173 → make a request to the service named app on the container port 5173 
+		(app is the name of the service specified in the docker-compose.dev.yml file)
 
 Docker Command Hierarchy Tree:
 docker
