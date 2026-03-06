@@ -15,8 +15,6 @@ WORKDIR /usr/src/app
 
 COPY --from=test-stage /usr/src/app/ .
 
-ENV VITE_BACKEND_URL=http://localhost:3000
-
 RUN npm run build
 
 
