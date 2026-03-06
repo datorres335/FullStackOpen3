@@ -421,14 +421,33 @@ a Introduction to Containers
 b Building and configuring environments
 
 c Basics of Orchestration
+https://expressjs.com/en/starter/static-files.html
+https://www.npmjs.com/package/serve
+https://docs.docker.com/reference/dockerfile/#cmd
+https://docs.docker.com/build/building/multi-stage/
+https://en.wikipedia.org/wiki/Nginx
+https://hub.docker.com/_/nginx
+https://docs.docker.com/reference/dockerfile#env
+https://docs.docker.com/guides/nodejs/run-tests/
+https://code.visualstudio.com/docs/devcontainers/containers
+https://www.npmjs.com/package/rollup
+https://www.busybox.net/
+https://en.wikipedia.org/wiki/Wget
+https://en.wikipedia.org/wiki/Reverse_proxy
+https://docs.docker.com/reference/compose-file/services/#depends_on
+https://docs.docker.com/compose/how-tos/startup-order/
+https://serverfault.com/questions/562756/how-to-remove-the-path-with-an-nginx-proxy-pass
+https://docs.docker.com/engine/network/#published-ports
+https://docs.docker.com/engine/network/
+https://kubernetes.io/
+https://courses.mooc.fi/org/uh-cs/courses/devops-with-docker
+https://courses.mooc.fi/org/uh-cs/courses/devops-with-kubernetes
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 13 Using relational databases______________________________________________________________________________________________________________________
 a Using relational databases with Sequelize
-
 b Join tables and queries
-
 c Migrations, many-to-many relationships
-
+SKIPPED THIS SECTION!!!!!!!!!!!!
