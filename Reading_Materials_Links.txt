@@ -334,28 +334,194 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 6 Advanced state management _______________________________________________________________________________________________________________________
 a Flux-architecture and Redux
+https://react.dev/learn/sharing-state-between-components
+https://facebookarchive.github.io/flux/docs/in-depth-overview/
+https://redux.js.org/tutorials/essentials/part-1-overview-concepts#store
+https://redux.js.org/tutorials/essentials/part-1-overview-concepts#actions
+https://redux.js.org/tutorials/essentials/part-1-overview-concepts#reducers
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters
+https://redux.js.org/tutorials/essentials/part-1-overview-concepts#dispatch
+https://redux.js.org/api/store#getstate
+https://redux.js.org/api/store#subscribelistener
+https://redux.js.org/introduction/why-rtk-is-redux-today
+https://en.wikipedia.org/wiki/Pure_function
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+https://en.wikipedia.org/wiki/Immutable_object
+https://vitest.dev/
+https://www.npmjs.com/package/deep-freeze
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring
+https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable
+https://goshacmd.com/controlled-vs-uncontrolled-inputs-react/
+https://redux.js.org/tutorials/essentials/part-1-overview-concepts#action-creators
+https://react-redux.js.org/api/hooks
+https://react-redux.js.org/
+https://react-redux.js.org/api/provider
+https://react-redux.js.org/api/hooks#usedispatch
+https://react-redux.js.org/api/hooks#useselector
+https://read.reduxbook.com/markdown/part1/04-action-creators.html
 
 b Many reducers
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/radio
+https://redux.js.org/api/combinereducers
+https://redux-toolkit.js.org/
+https://redux-toolkit.js.org/api/configureStore
+https://redux-toolkit.js.org/api/createSlice
+https://immerjs.github.io/immer/
+https://redux-toolkit.js.org/api/other-exports#current
+https://redux-toolkit.js.org/api/createSlice#reducers
 
 c Communicating with server in a Redux application
+https://axios-http.com/docs/intro
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+https://github.com/reduxjs/redux-thunk
+https://redux-toolkit.js.org/api/createAsyncThunk
+https://redux-toolkit.js.org/rtk-query/overview
 
 d React Query, useReducer and the context
-
+https://tanstack.com/query/latest
+https://github.com/typicode/json-server
+https://tanstack.com/query/latest/docs/framework/react/guides/queries
+https://tanstack.com/query/latest/docs/framework/react/reference/useQuery
+https://tanstack.com/query/latest/docs/framework/react/guides/query-keys
+https://tanstack.com/query/latest/docs/framework/react/guides/mutations
+https://tanstack.com/query/latest/docs/framework/react/reference/useMutation
+https://tanstack.com/query/latest/docs/framework/react/guides/invalidations-from-mutations
+https://tanstack.com/query/latest/docs/framework/react/guides/updates-from-mutation-responses
+https://tkdodo.eu/blog/react-query-render-optimizations
+https://tanstack.com/query/latest/docs/framework/react/guides/does-this-replace-client-state
+https://react.dev/reference/react/useReducer
+https://react.dev/learn/passing-data-deeply-with-context
+https://react.dev/reference/react/createContext
+https://react.dev/reference/react/useContext
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 7 React router, custom hooks, styling app with CSS and webpack_____________________________________________________________________________________
 a React Router
+https://reactrouter.com/
+https://reactrouter.com/6.28.0/start/tutorial
+https://api.reactrouter.com/v7/functions/react-router.BrowserRouter.html
+https://css-tricks.com/using-the-html5-history-api/
+https://api.reactrouter.com/v7/variables/react-router.Link.html
+https://api.reactrouter.com/v7/types/react-router.RouteObject.html
+https://api.reactrouter.com/v7/functions/react-router.Routes.html
+https://api.reactrouter.com/v7/functions/react-router.useParams.html
+https://api.reactrouter.com/v7/functions/react-router.useNavigate.html
+https://api.reactrouter.com/v7/functions/react-router.Navigate.html
+https://api.reactrouter.com/v7/functions/react-router.useMatch.html
 
 b Custom hooks
+https://react.dev/reference/react/hooks
+https://react.dev/reference/react/useState
+https://react.dev/reference/react/useEffect
+https://react.dev/warnings/invalid-hook-call-warning#breaking-rules-of-hooks
+https://www.npmjs.com/package/eslint-plugin-react-hooks
+https://react.dev/learn/reusing-logic-with-custom-hooks
+https://react.dev/learn/updating-objects-in-state#copying-objects-with-the-spread-syntax
+https://github.com/rehooks/awesome-react-hooks
+https://usehooks.com/
+https://overreacted.io/why-do-hooks-rely-on-call-order/
+https://react.dev/reference/react/useEffect#parameters
 
 c More about styles
+https://react-bootstrap.github.io/
+https://react-bootstrap.github.io/docs/getting-started/introduction/#stylesheets
+https://getbootstrap.com/docs/4.1/layout/overview/#containers
+https://getbootstrap.com/docs/4.1/content/tables/
+https://react-bootstrap.github.io/docs/components/table/
+https://react-bootstrap.github.io/docs/components/navbar
+https://getbootstrap.com/docs/4.1/components/forms/
+https://react-bootstrap.github.io/docs/forms/overview/
+https://getbootstrap.com/docs/4.1/components/alerts/
+https://react-bootstrap.github.io/docs/components/alerts/
+https://getbootstrap.com/docs/4.1/components/navbar/
+https://react-bootstrap.github.io/docs/components/navbar
+https://react-bootstrap.github.io/docs/components/navbar/#responsive-behaviors
+https://npmtrends.com/
+https://tailwindcss.com/
 
 d Webpack
+https://webpack.js.org/
+https://webpack.js.org/concepts/#entry
+https://webpack.js.org/concepts/#output
+https://nodejs.org/docs/latest-v8.x/api/path.html#path_path_resolve_paths
+https://nodejs.org/docs/latest/api/modules.html#__dirname
+https://webpack.js.org/concepts/loaders/
+https://github.com/babel/babel-loader
+https://react.dev/reference/react/createElement
+https://babeljs.io/docs/babel-polyfill/
+https://www.npmjs.com/package/core-js
+https://www.npmjs.com/package/regenerator-runtime
+https://babeljs.io/docs/plugins/
+https://babeljs.io/docs/babel-preset-react/
+https://babeljs.io/docs/babel-preset-env/
+https://webpack.js.org/loaders/css-loader/
+https://webpack.js.org/loaders/style-loader/
+https://github.com/webpack/mini-css-extract-plugin
+https://webpack.js.org/guides/development/#using-webpack-dev-server
+https://webpack.js.org/configuration/devtool/
+https://github.com/mishoo/UglifyJS/
+https://webpack.js.org/plugins/define-plugin/
+https://webpack.js.org/guides/production/
+https://remysharp.com/2010/10/08/what-is-a-polyfill
+https://www.npmjs.com/package/promise-polyfill
+https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills
+https://caniuse.com/
+https://developer.mozilla.org/en-US/
 
 e Class components, Miscellaneous
+https://legacy.reactjs.org/docs/hooks-intro.html
+https://legacy.reactjs.org/docs/state-and-lifecycle.html#converting-a-function-to-a-class
+https://react.dev/reference/react/Component#constructor
+https://react.dev/reference/react/Component#adding-lifecycle-methods-to-a-class-component
+https://react.dev/reference/react/Component#componentdidmount
+https://react.dev/reference/react/Component#setstate
+https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary
+https://legacy.reactjs.org/docs/hooks-faq.html#should-i-use-hooks-classes-or-a-mix-of-both
+https://david-gilbertson.medium.com/the-100-correct-way-to-structure-a-react-app-or-why-theres-no-such-thing-3ede534ef1ed
+https://en.wikipedia.org/wiki/Polling_(computer_science)
+https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval
+https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+https://socket.io/
+https://legacy.reactjs.org/docs/faq-internals.html#what-is-the-virtual-dom
+https://react.dev/reference/react-dom
+https://expressjs.com/en/advanced/security-updates.html
+https://nodejs.org/en/blog/vulnerability/
+https://docs.npmjs.com/cli/v11/commands/npm-audit
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Website_security
+https://expressjs.com/en/advanced/best-practice-security.html
+https://helmetjs.github.io/
+https://github.com/eslint-community/eslint-plugin-security
+https://www.javascriptstuff.com/react-seo/
+https://www.freecodecamp.org/news/seo-vs-react-is-it-neccessary-to-render-react-pages-in-the-backend-74ce5015c0c9
+https://github.com/vercel/next.js
+https://web.dev/explore/progressive-web-apps
+https://martinfowler.com/articles/microservices.html
+https://microservices.io/patterns/apigateway
+https://netflixtechblog.com/optimizing-the-netflix-api-5c9ac715cf19
+https://www.infoq.com/presentations/netflix-chaos-microservices/
+https://martinfowler.com/bliki/MonolithFirst.html
+https://martinfowler.com/articles/dont-start-monolith.html
+https://aws.amazon.com/lambda/
+https://www.serverless.com/
+https://cloud.google.com/functions
+https://azure.microsoft.com/en-us/products/functions/
+https://aws.amazon.com/api-gateway/
+https://www.npmjs.com/package/lodash
+https://ramdajs.com/
+https://github.com/date-fns/date-fns
+https://react-hook-form.com/
+https://recharts.github.io/?p=/en-US/
+https://github.com/highcharts/highcharts-react
+https://developers.google.com/analytics/devguides/collection/ga4/single-page-applications?implementation=browser-history
+https://github.com/codler/react-ga4
+https://reactpatterns.com/
+https://vasanthk.gitbooks.io/react-bits/content/
 
 f Exercises: extending the bloglist
+https://prettier.io/
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
@@ -417,8 +583,34 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 12 Containers______________________________________________________________________________________________________________________________________
 a Introduction to Containers
+https://learn.microsoft.com/en-us/windows/wsl/install
+https://www.docker.com/
+https://docs.docker.com/get-started/get-docker/
+https://docs.docker.com/compose/
+https://hub.docker.com/
+https://hub.docker.com/_/hello-world
+https://www.nano-editor.org/
+https://hub.docker.com/_/node
 
 b Building and configuring environments
+https://expressjs.com/en/starter/generator.html
+https://expressjs.com/en/guide/debugging.html#debugging-express
+https://snyk.io/blog/10-best-practices-to-containerize-nodejs-web-applications-with-docker/
+https://docs.docker.com/reference/compose-file/
+https://hub.docker.com/_/mongo
+https://docs.docker.com/engine/storage/bind-mounts/
+https://docs.docker.com/engine/storage/volumes/
+https://docs.docker.com/reference/cli/docker/container/exec/
+https://www.f5.com/products/nginx
+https://redis.io/
+https://redis.io/nosql/key-value-databases/
+https://hub.docker.com/_/redis
+https://www.npmjs.com/package/redis
+https://redis.io/docs/latest/develop/
+https://redis.io/docs/latest/commands/keys/
+https://redis.io/docs/latest/commands/get/
+https://redis.io/docs/latest/commands//
+https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern
 
 c Basics of Orchestration
 https://expressjs.com/en/starter/static-files.html
