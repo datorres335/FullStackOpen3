@@ -528,40 +528,311 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 8 GraphQL__________________________________________________________________________________________________________________________________________
 a GraphQL-server
+https://graphql.org/
+https://graphql.org/learn/schema/
+https://graphql.org/learn/schema/#type-system
+https://graphql.org/learn/schema/#scalar-types
+https://graphql.org/learn/queries/#fields
+https://www.apollographql.com/docs/apollo-server
+https://www.apollographql.com/docs/apollo-server/api/apollo-server
+https://www.apollographql.com/docs/apollo-server/data/resolvers
+https://www.apollographql.com/docs/graphos/platform/explorer
+https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql
+https://the-guild.dev/graphql/tools/docs/resolvers#resolver-function-signature
+https://the-guild.dev/graphql/tools/docs/resolvers#default-resolver
+https://graphql.org/learn/mutations/
+https://github.com/uuidjs/uuid#readme
+https://graphql.org/learn/validation/
+https://www.apollographql.com/docs/apollo-server/data/errors#custom-errors
+https://www.apollographql.com/docs/apollo-server/data/errors#built-in-error-codes
+https://graphql.org/learn/schema/#enumeration-types
+https://graphql.org/learn/queries/#variables
 
 b React and GraphQL
+https://www.apollographql.com/docs/react
+https://www.apollographql.com/docs/react/get-started
+https://www.apollographql.com/docs/react/get-started#step-3-initialize-apolloclient
+https://www.apollographql.com/docs/react/get-started#step-4-connect-your-client-to-react
+https://www.apollographql.com/docs/react/data/queries
+https://www.apollographql.com/docs/react/api/react/hooks#usequery
+https://www.apollographql.com/docs/react/api/react/hooks#result
+https://graphql.org/learn/queries/#variables
+https://www.apollographql.com/docs/react/data/queries#executing-queries-manually
+https://www.apollographql.com/docs/react/api/react/useLazyQuery
+https://www.apollographql.com/docs/react/data/queries#skipoptional
+https://www.apollographql.com/docs/react/caching/overview
+https://www.apollographql.com/docs/react/api/react/hooks#usemutation
+https://www.apollographql.com/docs/react/data/queries#polling
+https://www.apollographql.com/docs/react/data/refetching
+https://www.apollographql.com/docs/react/api/react/hooks#params-2
+https://www.apollographql.com/docs/react/local-state/local-state-management
+https://chromewebstore.google.com/detail/apollo-client-devtools/jdkknkkbebbapilgoeccciglkfbmbnfm
 
 c Database and user administration
+https://www.apollographql.com/docs/apollo-server/data/resolvers#return-values
+https://www.apollographql.com/docs/apollo-server/data/context
+https://www.apollographql.com/blog/authorization-in-graphql/
+https://www.apollographql.com/docs/apollo-server/api/standalone
 
 d Login and updating the cache
+https://www.apollographql.com/docs/react/api/core/ApolloClient#resetstore
+https://www.apollographql.com/docs/react/api/react/useApolloClient
+https://www.apollographql.com/docs/react/networking/authentication#reset-store-on-logout
+https://www.apollographql.com/docs/react/api/link/apollo-link-http
+https://www.apollographql.com/docs/react/api/link/apollo-link-context#overview
+https://www.apollographql.com/docs/react/networking/authentication#header
+https://www.apollographql.com/docs/react/data/mutations#the-update-function
+https://www.apollographql.com/docs/react/caching/cache-interaction#using-updatequery-and-updatefragment
+https://www.apollographql.com/docs/react/api/react/hooks#options
+https://www.apollographql.com/docs/react/data/queries#setting-a-fetch-policy
+https://martinfowler.com/bliki/TwoHardThings.html
 
 e Fragments and subscriptions
+https://graphql.org/learn/queries/#fragments
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+https://www.apollographql.com/docs/react/data/subscriptions
+https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+https://www.apollographql.com/docs/apollo-server/api/standalone#startstandaloneserver
+https://www.apollographql.com/docs/apollo-server/api/express-middleware
+https://www.apollographql.com/docs/apollo-server/api/plugin/drain-http-server
+https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern
+https://www.apollographql.com/docs/apollo-server/data/subscriptions#the-pubsub-class
+https://www.apollographql.com/docs/apollo-server/data/subscriptions#listening-for-events
+https://www.apollographql.com/docs/react/api/react/hooks#usesubscription
+https://www.apollographql.com/docs/apollo-server/data/resolvers#resolver-arguments
+https://github.com/graphql/dataloader
+https://www.robinwieruch.de/graphql-apollo-server-tutorial/#graphql-server-data-loader-caching-batching
+https://medium.com/@peterpme/thoughts-on-structuring-your-apollo-queries-mutations-939ba4746cd8
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 9 TypeScript_______________________________________________________________________________________________________________________________________
 a Background and introduction
+https://www.typescriptlang.org/
+https://github.com/DefinitelyTyped/DefinitelyTyped
+https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions
+https://www.typescriptlang.org/docs/handbook/2/narrowing.html
+https://github.com/TypeStrong/ts-node
 
 b First steps with TypeScript
+https://www.typescriptlang.org/play/
+https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+https://www.typescriptlang.org/tsconfig/#noImplicitAny
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#the-primitives-string-number-and-boolean
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases
+https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#new-unknown-top-type
+https://www.typescriptlang.org/docs/handbook/2/narrowing.html
+https://www.typescriptlang.org/docs/handbook/2/narrowing.html#instanceof-narrowing
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#arrays
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#interfaces
+https://typescript-eslint.io/rules/array-type/#array-simple
+https://www.typescriptlang.org/tsconfig/#noImplicitAny
+https://www.typescriptlang.org/docs/handbook/modules/introduction.html
+https://www.typescriptlang.org/tsconfig/
+https://en.wikipedia.org/wiki/Query_string
+https://expressjs.com/en/5x/api.html#req.query
+https://nodejs.org/api/modules.html#accessing-the-main-module
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any
+https://expressjs.com/en/5x/api.html#req
+https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-explicit-any.mdx
+https://github.com/typescript-eslint/typescript-eslint
+https://eslint.style/rules
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions
 
 c Typing an Express app
+https://www.typescriptlang.org/tsconfig/#strict
+https://www.typescriptlang.org/tsconfig/#esModuleInterop
+https://eslint.org/docs/latest/use/configure/configuration-files#excluding-files-with-ignores
+https://en.wikipedia.org/wiki/Domain-driven_design
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#interfaces
+https://www.typescriptlang.org/docs/handbook/2/objects.html#optional-properties
+https://www.typescriptlang.org/tsconfig/#resolveJsonModule
+https://nodejs.org/api/modules.html#modules_file_modules
+https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys
+https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases
+https://www.typescriptlang.org/docs/handbook/type-compatibility.html
+https://www.typescriptlang.org/docs/handbook/utility-types.html
+https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-types
+https://www.typescriptlang.org/docs/handbook/2/functions.html#unknown
+https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates
+https://www.typescriptlang.org/docs/handbook/enums.html
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions
+https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#new-unknown-top-type
+https://www.typescriptlang.org/docs/handbook/2/narrowing.html#the-in-operator-narrowing
+https://zod.dev/
+https://zod.dev/api?id=strings
+https://zod.dev/basics?id=parsing-data
+https://zod.dev/api?id=iso-dates
+https://zod.dev/api?id=optionals
+https://zod.dev/api?id=enums
+https://zod.dev/api?id=objects
+https://zod.dev/basics?id=handling-errors
+https://zod.dev/basics?id=inferring-types
 
 d React with types
+https://www.typescriptlang.org/tsconfig/#lib
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix-
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types
+https://www.typescriptlang.org/docs/handbook/2/objects.html#extending-types
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#working-with-union-types
+https://www.typescriptlang.org/docs/handbook/2/narrowing.html#discriminated-unions
+https://www.typescriptlang.org/docs/handbook/2/narrowing.html#exhaustiveness-checking
+https://www.typescriptlang.org/docs/handbook/2/narrowing.html#the-never-type
+https://codewithstyle.info/Using-React-useState-hook-with-TypeScript/
+https://www.typescriptlang.org/docs/handbook/type-inference.html#handbook-content
+https://react-typescript-cheatsheet.netlify.app/
+https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/hooks/#usestate
+https://www.typescriptlang.org/docs/handbook/2/generics.html#working-with-generic-type-variables
+https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/forms_and_events/
+https://upmostly.com/typescript/how-to-use-axios-in-your-typescript-apps
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces
 
 e Grande finale: Patientor
+https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example/#basic-prop-types-examples
+https://github.com/microsoft/TypeScript/issues/42680
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 10 React Native____________________________________________________________________________________________________________________________________
 a Introduction to React Native
+https://reactnative.dev/
+https://docs.expo.dev/versions/latest/
+https://docs.expo.dev/faq/#limitations
+https://docs.expo.dev/versions/latest/sdk/expo/#registerrootcomponentcomponent?redirected
+https://metrobundler.dev/
+https://docs.expo.dev/workflow/android-studio-emulator/
+https://docs.expo.dev/get-started/create-a-project/?redirected
+https://reactnative.dev/docs/debugging
+https://reactnative.dev/docs/react-native-devtools
+https://docs.expo.dev/debugging/runtime-issues/
 
 b React Native basics
+https://reactnative.dev/docs/intro-react-native-components
+https://reactnative.dev/docs/text
+https://reactnative.dev/docs/components-and-apis
+https://reactnative.dev/docs/view
+https://reactnative.dev/docs/textinput
+https://reactnative.dev/docs/textinput#securetextentry
+https://reactnative.dev/docs/pressable
+https://reactnative.dev/docs/flatlist
+https://reactnative.dev/docs/flatlist#required-renderitem
+https://reactnative.dev/docs/image
+https://reactnative.dev/docs/scrollview
+https://reactnative.dev/docs/scrollview#horizontal
+https://github.com/vhpoet/react-native-styling-cheat-sheet
+https://reactnative.dev/docs/stylesheet#create
+https://css-tricks.com/almanac/properties/f/flex-direction/
+https://css-tricks.com/almanac/properties/j/justify-content/
+https://css-tricks.com/almanac/properties/a/align-items/
+https://css-tricks.com/almanac/properties/f/flex-grow/
+https://reactnative.dev/blog/2023/01/12/version-071#simplifying-layouts-with-flexbox-gap
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://flexbox.tech/
+https://reactnative.dev/docs/flexbox
+https://m2.material.io/components/app-bars-top
+https://reactrouter.com/6.4.5/router-components/native-router
+https://www.npmjs.com/package/react-router-native
+https://reactrouter.com/6.4.5/components/link-native
+https://formik.org/
+https://formik.org/docs/api/useFormik
+https://formik.org/docs/guides/validation#validate
+https://formik.org/docs/guides/validation#validationschema
+https://snack.expo.dev/
+https://github.com/jquense/yup
 
 c Communicating with server
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+https://developer.mozilla.org/en-US/docs/Web/API/Response
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+https://graphql.org/learn/pagination/
+https://ngrok.com/
+https://www.apollographql.com/docs/graphos/platform/explorer
+https://www.npmjs.com/package/@apollo/client
+https://www.apollographql.com/docs/react/api/react/hooks#the-apolloprovider-component
+https://www.apollographql.com/docs/react/data/fragments
+https://www.apollographql.com/docs/react/api/react/hooks#usequery
+https://www.apollographql.com/docs/react/data/queries#setting-a-fetch-policy
+https://docs.expo.dev/guides/environment-variables/#using-app-manifest--extra
+https://react-native-async-storage.github.io/3.0/#usage
+https://react-native-async-storage.github.io/3.0/api/usage/#single-item-operations
+https://docs.expo.dev/versions/latest/sdk/securestore/
+https://www.apollographql.com/docs/react/api/link/apollo-link-context
+https://react.dev/learn/passing-data-deeply-with-context
+https://react.dev/reference/react/useContext
+https://react.dev/reference/react/createContext#provider
+https://kentcdodds.com/blog/how-to-use-react-context-effectively
+https://react.dev/reference/react/useReducer
+https://www.apollographql.com/docs/react/api/core/ApolloClient#resetstore
+https://www.apollographql.com/docs/react/api/react/hooks#useapolloclient
+https://www.apollographql.com/docs/react/api/react/hooks#usequery
 
 d Testing and extending our application
+https://jestjs.io/
+https://github.com/expo/expo/tree/master/packages/jest-expo
+https://www.npmjs.com/package/eslint-plugin-jest
+https://docs.expo.dev/develop/unit-testing/
+https://jestjs.io/docs/configuration#testmatch-arraystring
+https://testing-library.com/docs/dom-testing-library/intro/
+https://oss.callstack.com/react-native-testing-library/
+https://oss.callstack.com/react-native-testing-library/docs/api/queries
+https://oss.callstack.com/react-native-testing-library/docs/api#fireevent
+https://oss.callstack.com/react-native-testing-library/docs/api#render
+https://oss.callstack.com/react-native-testing-library/docs/api/queries/#bytext
+https://oss.callstack.com/react-native-testing-library/docs/api#screen
+https://jestjs.io/docs/expect#tobedefined
+https://oss.callstack.com/react-native-testing-library/docs/guides/how-to-query
+https://kentcdodds.com/blog/making-your-ui-tests-resilient-to-change
+https://oss.callstack.com/react-native-testing-library/docs/api#debug
+https://github.com/testing-library/jest-native#matchers
+https://jestjs.io/docs/expect
+https://jestjs.io/docs/mock-function-api
+https://www.apollographql.com/docs/react/development-testing/testing
+https://reactnative.dev/docs/view#testid
+https://oss.callstack.com/react-native-testing-library/docs/api/queries#getallby
+https://github.com/testing-library/jest-native#tohavetextcontent
+https://testing-library.com/docs/dom-testing-library/api-within/
+https://oss.callstack.com/react-native-testing-library/docs/api#waitfor
+https://www.apollographql.com/docs/react/data/queries
+https://docs.expo.dev/versions/latest/sdk/linking/
+https://docs.expo.dev/versions/latest/sdk/linking/#linkingopenurlurl
+https://reactrouter.com/6.14.2/hooks/use-params
+https://reactnative.dev/docs/flatlist#listheadercomponent
+https://reactnative.dev/docs/flatlist#itemseparatorcomponent
+https://github.com/jquense/yup#yup
+https://github.com/jquense/yup#schemaoneofarrayofvalues-arrayany-message-string--function-schema-alias-equals
+https://github.com/jquense/yup#refpath-string-options--contextprefix-string--ref
+https://github.com/jaredpalmer/formik/issues/90#issuecomment-354873201
+https://reactnative.dev/docs/textinput#multiline
+https://docs.expo.dev/versions/latest/sdk/picker/
+https://lodash.com/docs/4.17.23#debounce
+https://www.npmjs.com/package/use-debounce
+https://graphql.org/learn/queries/#directives
+https://relay.dev/graphql/connections.htm
+https://docs.github.com/en/graphql
+https://shopify.engineering/pagination-relative-cursors
+https://www.apollographql.com/docs/react/pagination/cursor-based
+https://reactnative.dev/docs/virtualizedlist#onendreached
+https://reactnative.dev/docs/virtualizedlist#onendreachedthreshold
+https://www.apollographql.com/docs/react/pagination/core-api#the-fetchmore-function
+https://www.apollographql.com/docs/react/caching/cache-field-behavior
+https://www.apollographql.com/docs/react/caching/cache-field-behavior#the-read-function
+https://www.apollographql.com/docs/react/caching/cache-field-behavior#the-merge-function
+https://github.com/jondot/awesome-react-native
+https://oss.callstack.com/react-native-paper/
+https://oss.callstack.com/react-native-paper/docs/guides/theming/
+https://oss.callstack.com/react-native-paper/docs/guides/getting-started/
+https://reactnavigation.org/
+https://docs.expo.dev/build/setup/?redirected
+https://docs.expo.dev/submit/introduction/
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
