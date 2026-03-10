@@ -839,15 +839,59 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
 Part 11 CI/CD___________________________________________________________________________________________________________________________________________
 a Introduction to CI/CD
+https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
+https://www.martinfowler.com/articles/continuousIntegration.html
+https://martinfowler.com/bliki/ContinuousDelivery.html
+https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment
+https://www.atlassian.com/git/tutorials/comparing-workflows
+https://itrevolution.com/product/accelerate/
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2681909
+https://www.jenkins.io/
+https://github.com/features/actions
 
 b Getting started with GitHub Actions
+https://docs.github.com/en/actions/get-started/understand-github-actions#workflows
+https://docs.github.com/en/actions/get-started/understand-github-actions#jobs
+https://docs.github.com/en/actions/get-started/understand-github-actions#events
+https://docs.github.com/en/actions/get-started/understand-github-actions#steps
+https://docs.github.com/en/actions/how-tos/reuse-automations
+https://docs.ansible.com/projects/ansible/latest/reference_appendices/YAMLSyntax.html
+https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows
+https://en.wikipedia.org/wiki/Cron
+https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstepsuses
+https://github.com/actions/checkout
+https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstepswith
 
 c Deployment
+https://www.guru99.com/file-permissions.html
+https://render.com/docs/deploys#deploy-steps
+https://github.com/marketplace
+https://render.com/docs/api
+https://render.com/docs/deploy-hooks
+https://render.com/docs/deploys#zero-downtime-deploys
 
 d Keeping green
+https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstepsif
+https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#contexts
+https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context
+https://semver.org/#semantic-versioning-200
+https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-tag
+https://github.com/anothrNick/github-tag-action
+https://docs.github.com/en/actions/tutorials/authenticate-with-github_token
+https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows#creating-dependent-jobs
+https://docs.github.com/en/actions/reference/workflows-and-actions/expressions#contains
+https://docs.github.com/en/actions/reference/workflows-and-actions/expressions#join
+https://github.com/nektos/act
 
 e Expanding Further
 https://github.com/marketplace/actions/actions-status-discord  //DONT USE THE ACTIONS NOTIFICATION THE TUTORIAL PROVIDES!! DOES NOT WORK
+https://github.com/marketplace?type=actions
+https://github.com/marketplace?type=actions&query=discord
+https://github.com/marketplace/actions/discord-webhook-notify
+https://docs.github.com/en/actions/reference/workflows-and-actions/expressions#status-check-functions
+https://www.datadoghq.com/
+https://github.com/security/advanced-security
+https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule
 
 ________________________________________________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________
